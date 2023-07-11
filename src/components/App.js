@@ -34,9 +34,7 @@ const App = () => {
       sessionId = uid(10);
       localStorage.setItem('sessionId', sessionId)
     }
-  })
-
-  const sessionId = localStorage.getItem('sessionId');
+ });
 
   return (
     <>

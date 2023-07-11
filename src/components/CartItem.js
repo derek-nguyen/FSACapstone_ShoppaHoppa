@@ -13,7 +13,7 @@ const CartItem = (props) => {
                 <UpdateQty product={product} user={user} sessionId={sessionId} fetchProductsCart={fetchProductsCart} setProducts={setProducts}/>
             </td>
             <td>${product.carttotalprice}</td>
-            <td><RemoveFromCart user={user} cartProdId={product.cartProdId}/></td>
+            <td><RemoveFromCart /></td>
         </tr>
     )
 }
