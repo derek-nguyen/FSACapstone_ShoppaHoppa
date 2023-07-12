@@ -15,7 +15,25 @@ const ProductDetails = (props) => {
 
         if (!_userCartExists) {
           const createdGuestCart = await createNewCart(null, sessionId);
-          console.log(createdGuestCart);
+          const cartJSON = JSON.parse(createdGuestCart)
+
+          const productData = {
+            prodId: product.prodid,
+            prodModelName: product.prodmodelname,
+            prodDescription: product.proddescription,
+            prodImg: product.prodimg,
+            quantity: 1,
+            prodPrice: product.prodprice,
+            totalPrice: product.prodprice * 1,
+            cartId: cartJSON.cartid
+          };
+
+          const addedUserProduct = await addProductToCart(productData);
+
+          if (addedUserProduct) {
+            alert('Product added!')
+          }
+
         } else {
           const productData = {
             prodId: product.prodid,
@@ -38,7 +56,25 @@ const ProductDetails = (props) => {
         const _userCartExists = await checkUserCartExists(user.id, sessionId);
 
         if (!_userCartExists) {
-          await createNewCart(user.id || null, sessionId);
+          const newCart = await createNewCart(null, sessionId);
+          const cartJSON = JSON.parse(newCart)
+
+          const productData = {
+            prodId: product.prodid,
+            prodModelName: product.prodmodelname,
+            prodDescription: product.proddescription,
+            prodImg: product.prodimg,
+            quantity: 1,
+            prodPrice: product.prodprice,
+            totalPrice: product.prodprice * 1,
+            cartId: cartJSON.cartid
+          };
+
+          const addedUserProduct = await addProductToCart(productData);
+
+          if (addedUserProduct) {
+            alert('Product added!')
+          }
         } else {
           const productData = {
             prodId: product.prodid,
