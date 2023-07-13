@@ -9,6 +9,8 @@ const CheckoutButton = (props) => {
 
   const handleCheckout = async () => {
     try {
+      let userId = user ? user.id : 99; // Assign user ID or 99 if user is null
+      
       let orderItems;
       if (product.length === 1) {
         const item = product[0];
@@ -16,7 +18,7 @@ const CheckoutButton = (props) => {
           orderProdId: item.cartprodid,
           orderProdModelName: item.cartprodname,
           orderQty: item.cartquantity,
-          userIdOrder: user.id,
+          userIdOrder: userId,
           orderProdImg: item.prodimg,
           orderProdPrice: item.carttotalprice,
         }];
@@ -25,19 +27,19 @@ const CheckoutButton = (props) => {
           orderProdId: item.cartprodid,
           orderProdModelName: item.cartprodname,
           orderQty: item.cartquantity,
-          userIdOrder: user.id,
+          userIdOrder: userId,
           orderProdImg: item.prodimg,
           orderProdPrice: item.carttotalprice,
         }));
       }
 
-      const newOrder = await createNewOrder(orderItems, user.id);
+      const newOrder = await createNewOrder(orderItems, userId);
       console.log("New Order:", newOrder);
 
       for (const item of product) {
         await handleRemoveFromCart(item.cartid, item.cartprodid);
       }
-      const updatedProducts = await fetchProductsCart(user.userid, sessionId);
+      const updatedProducts = await fetchProductsCart(userId, sessionId);
       setProducts(updatedProducts);
       history.push("/confirmation");
     } catch (error) {
