@@ -94,7 +94,6 @@ COMPONENT: Navbar
 @media (max-width: 768px) {
   .side-menu-box {
     width: 45vw;
-=======
 
 @media (max-width: 768px) {
   .side-menu-box {
@@ -261,9 +260,6 @@ COMPONENT: ProductListItem
   border: none;
   color: white;
 }
-
-
-
 
 
 
@@ -530,6 +526,17 @@ COMPONENT: ProductListItem
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.pdp-edit-product-button {
+  width: 200px;
+  background-color: #707ed3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
 .pdp-description-container {
@@ -881,8 +888,16 @@ textarea {
   background-color: #45a049;
 }
 
+/* Edit Product Modal */
 
-
+.modal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 
 /*Landing Page */
 
@@ -895,6 +910,19 @@ textarea {
   align-items: center;
 }
 
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
 .video-container {
   width: 100%;
   height: 100%;
@@ -907,3 +935,4 @@ textarea {
 .video-container.fade-in {
   opacity: 1;
 } */
+

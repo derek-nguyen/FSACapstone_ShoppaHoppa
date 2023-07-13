@@ -104,6 +104,26 @@ export const fetchProdIdToCreate = async (prodId) => {
   }
 };
 
+export const updateProduct = async (prodId, fields) => {
+  console.log(prodId, fields)
+  try {
+    const response = await fetch(`${BASE_URL}/api/products/update/${prodId}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(fields)
+    })
+    if (response.ok) {
+      return response;
+    } else {
+      throw new Error(response.statusText);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 // Cart 
 export const checkUserCartExists = async (userId, sessionId) => {
   const body = {
@@ -361,7 +381,7 @@ export const fetchMyOrders = async (userId, userToken) => {
         Authorization: `Bearer ${userToken}`,
       },
     });
-     console.log(response);
+    console.log(response);
     if (response.ok) {
       const data = await response.json();
       return data.orders;
@@ -371,3 +391,4 @@ export const fetchMyOrders = async (userId, userToken) => {
   }
 };
 
+// export const updateProduct = async ()

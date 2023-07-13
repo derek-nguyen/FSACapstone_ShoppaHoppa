@@ -12,7 +12,6 @@ const ProductDisplayPage = (props) => {
     useEffect(() => {
         const getPdp = async () => {
             const results = await fetchProdId(prodId);
-            console.log(results)
             setProduct(results);
         }
         getPdp();
@@ -20,7 +19,7 @@ const ProductDisplayPage = (props) => {
 
     return (
         <div className="pdp-container">
-            <ProductDetails product={product} user={user} sessionId={sessionId} />
+            <ProductDetails product={product} user={user} sessionId={sessionId} setProduct={setProduct} />
             <ProductCarousel product={product} />
         </div>
     )
