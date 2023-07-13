@@ -39,7 +39,7 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
-    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.7.16",
     "uid": "^2.0.2"
   },
   "devDependencies": {

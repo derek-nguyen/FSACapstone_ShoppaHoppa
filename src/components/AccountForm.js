@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom"
 import { registerUser, loginUser } from "../axios-services";
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 
 const AccountForm = (props) => {
 
@@ -27,8 +27,13 @@ const AccountForm = (props) => {
                     localStorage.setItem('userToken', JSON.stringify(registeredUser.token));
                     setUser(registeredUser.user);
                     localStorage.setItem('user', JSON.stringify(registeredUser.user));
-                    swal(`Registration successful. Welcome ${registeredUser.user.username}`);
-                    // alert(`Registration successful. Welcome ${registeredUser.user.username}`);
+                    Swal.fire({
+                        position: 'top-middle',
+                        icon: 'success',
+                        title: ` Registration successful. Welcome ${registeredUser.user.username}`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     history.push('/products');
                 }
             } catch (error) {
@@ -45,8 +50,13 @@ const AccountForm = (props) => {
                     localStorage.setItem('userToken', JSON.stringify(loggedInUser.token));
                     setUser(loggedInUser.user);
                     localStorage.setItem('user', JSON.stringify(loggedInUser.user));
-                    swal(`Welcome back ${loggedInUser.user.username}`);
-                    // alert(`Welcome back ${loggedInUser.user.username}`);
+                    Swal.fire({
+                        position: 'top-middle',
+                        icon: 'success',
+                        title: ` Welcome back ${loggedInUser.user.username}`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     history.push('/products');
                 }
             } catch (error) {

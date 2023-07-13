@@ -288,6 +288,7 @@ export const handleUpdateQty = async (userToken, cartProdId) => {
     });
     const result = await response.json();
     alert('Quantity has been updated!');
+    
 
     return result;
   } catch (err) {
