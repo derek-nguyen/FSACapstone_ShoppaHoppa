@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -26,13 +25,6 @@ const Footer = () => {
     return (
         <>
             <footer className={`footer${isVisible ? " visible" : ""}`}>
-                <div className="footer-container">
-                    <Link to="/home" className="footer-link">
-                        <div className="footer-logo">
-                            <p>Chrono Realm</p>
-                        </div>
-                    </Link>
-                </div>
                 <div className="footer-bottom">
                     <p>&copy; {new Date().getFullYear()} Chrono Realm. All rights reserved.</p>
                 </div>

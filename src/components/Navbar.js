@@ -19,7 +19,7 @@ const Navbar = (props) => {
                             All Products
                         </Link>
                     </li>
-                    {userToken ? (
+                    {/* {userToken ? (
                         <li className="nav-item">
                             <Link to="/orders" className="nav-link">
                                 My Orders
@@ -27,7 +27,7 @@ const Navbar = (props) => {
                         </li>
                     ) : (
                         null
-                    )}
+                    )} */}
                     <li className="nav-item">
                         <Link to="/cart" className="nav-link">
                             Cart

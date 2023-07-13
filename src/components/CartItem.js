@@ -30,6 +30,8 @@ const CartItem = (props) => {
     </td>
 </tr>
 
+
+
     )
 }
 
