@@ -81,21 +81,20 @@ async function deleteProductById(prodId) {
 
 async function updateProduct(prodId, fields = {}) {
   // build set string
-  const setString = Object.keys(fields).map((key, index) => `"${key}"=$${index + 1}`).join(', ');
-
-  console.log(setString);
+  const setString = Object.keys(fields).map((key, index) => `${key}=$${index + 1}`).join(', ');
 
   if (setString.length === 0) {
     return;
   }
 
   try {
+    const values = [...Object.values(fields), prodId]
     const { rows: [product] } = await client.query(`
         UPDATE products
         SET ${setString}
-        WHERE prodid = ${prodId}
+        WHERE prodid = $${values.length}
         RETURNING *;
-      `, Object.values(fields))
+      `, values)
 
     return product
   } catch (error) {
