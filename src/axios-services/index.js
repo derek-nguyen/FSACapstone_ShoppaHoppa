@@ -105,6 +105,7 @@ export const fetchProdIdToCreate = async (prodId) => {
 };
 
 export const updateProduct = async (prodId, fields) => {
+  console.log(prodId, fields)
   try {
     const response = await fetch(`${BASE_URL}/api/products/update/${prodId}`, {
       method: "PATCH",
@@ -114,7 +115,7 @@ export const updateProduct = async (prodId, fields) => {
       body: JSON.stringify(fields)
     })
     if (response.ok) {
-      return response.json();
+      return response;
     } else {
       throw new Error(response.statusText);
     }

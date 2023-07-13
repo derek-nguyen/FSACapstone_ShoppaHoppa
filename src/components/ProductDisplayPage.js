@@ -19,7 +19,7 @@ const ProductDisplayPage = (props) => {
 
     return (
         <div className="pdp-container">
-            <ProductDetails product={product} user={user} sessionId={sessionId} />
+            <ProductDetails product={product} user={user} sessionId={sessionId} setProduct={setProduct} />
             <ProductCarousel product={product} />
         </div>
     )

@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { updateProduct } from '../axios-services';
+import { fetchProdId } from '../axios-services'
 
 const AdminEditProduct = (props) => {
-    const { user, product } = props;
+    const { product, setProduct } = props;
 
     // console.log(product)
 
     const [isOpen, setIsOpen] = useState(false);
-    const [productData, setProductData] = useState({
-        ...product
-    });
+    const [isUpdated, setIsUpdated] = useState(false);
 
-    console.log(productData)
-    // const [productData, setProductData] = useState({
-    //     prodId: "",
-    //     brand: "",
-    //     prodPrice: "",
-    //     inventory: "",
-    //     prodModelName: "",
-    //     prodDescription: "",
-    //     prodImg: "",
-    // });
+
+    // console.log(productData)
+    const [productData, setProductData] = useState({
+        prodId: "",
+        brand: "",
+        prodPrice: "",
+        inventory: "",
+        prodModelName: "",
+        prodDescription: "",
+        prodImg: "",
+    });
 
     const openModal = () => {
         setIsOpen(true);
@@ -33,15 +33,49 @@ const AdminEditProduct = (props) => {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setProductData({ ...productData, [name]: value });
+
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        const updatedData = filterEmptyProperties(productData)
         // Handle form submission here (e.g., updateProduct or API call)
+        try {
+            const response = await updateProduct(product.prodid, updatedData);
+
+            if (response.ok) {
+                setIsUpdated(true);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
     };
+
+    useEffect(() => {
+        if (isUpdated) {
+            setIsUpdated(false);
+            closeModal();
+
+            fetchProdId(product.prodid)
+                .then((product) => {
+                    setProduct(product);
+                })
+        }
+    }, [isUpdated])
 
     const handleEditProduct = () => {
         openModal();
+    };
+
+    const filterEmptyProperties = (data) => {
+        const filteredData = {};
+        Object.entries(data).forEach(([key, value]) => {
+            if (value !== "") {
+                filteredData[key] = value;
+            }
+        });
+        return filteredData;
     };
 
     return (
@@ -65,7 +99,6 @@ const AdminEditProduct = (props) => {
                                             value={productData.prodId}
                                             onChange={handleInputChange}
                                             placeholder="Product ID"
-                                            required
                                         />
                                     </div>
                                     <div className="grid-item">
@@ -76,7 +109,6 @@ const AdminEditProduct = (props) => {
                                             value={productData.brand}
                                             onChange={handleInputChange}
                                             placeholder="Brand"
-                                            required
                                         />
                                     </div>
                                 </div>
@@ -91,7 +123,6 @@ const AdminEditProduct = (props) => {
                                             value={productData.prodPrice}
                                             onChange={handleInputChange}
                                             placeholder="Product Price"
-                                            required
                                         />
                                     </div>
                                     <div className="grid-item">
@@ -102,7 +133,6 @@ const AdminEditProduct = (props) => {
                                             value={productData.inventory ? productData.inventory : 0}
                                             onChange={handleInputChange}
                                             placeholder="Inventory"
-                                            required
                                         />
                                     </div>
                                 </div>
@@ -112,20 +142,18 @@ const AdminEditProduct = (props) => {
                                 <input
                                     type="text"
                                     name="prodModelName"
-                                    value={productData.prodmodelname}
+                                    value={productData.prodModelName}
                                     onChange={handleInputChange}
                                     placeholder="Product Model Name"
-                                    required
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="prodDescription">Product Description:</label>
                                 <textarea
                                     name="prodDescription"
-                                    value={productData.proddescription}
+                                    value={productData.prodDescription}
                                     onChange={handleInputChange}
                                     placeholder="Product Description"
-                                    required
                                 />
                             </div>
                             <div className="form-group">
@@ -135,8 +163,8 @@ const AdminEditProduct = (props) => {
                                     name="prodImg"
                                     value={productData.prodImg}
                                     onChange={handleInputChange}
+                                    maxLength={"255"}
                                     placeholder="Product Image URL"
-                                    required
                                 />
                             </div>
                             <button type="submit" className="btn-create">

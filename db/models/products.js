@@ -82,7 +82,7 @@ async function deleteProductById(prodId) {
 async function updateProduct(prodId, fields = {}) {
   // build set string
   const setString = Object.keys(fields).map((key, index) => `${key}=$${index + 1}`).join(', ');
-
+  
   if (setString.length === 0) {
     return;
   }
