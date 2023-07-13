@@ -13,7 +13,7 @@ import {
   CartSummary,
   ProductDisplayPage,
   ConfirmationPage,
-  Home, 
+  Home,
   Footer,
   AdminDashboard
 } from '../components'
@@ -26,7 +26,13 @@ const App = () => {
 
   const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem('user');
-    return storedUser ? JSON.parse(storedUser) : null
+
+    if (storedUser !== "undefined") {
+      return JSON.parse(storedUser);
+    } else {
+      return null;
+    }
+    // return storedUser ? JSON.parse(storedUser) : null
   });
 
   useEffect(() => {
@@ -50,10 +56,10 @@ const App = () => {
           )}
         />
         <Route
-        path = '/home'
-        render = {() => (
-          <Home />
-        )}
+          path='/home'
+          render={() => (
+            <Home />
+          )}
         />
         <Route
           exact path='/products'
@@ -64,19 +70,19 @@ const App = () => {
         <Route
           exact path='/products/:prodId'
           render={() => (
-            <ProductDisplayPage user={user} sessionId={sessionId}/>
+            <ProductDisplayPage user={user} sessionId={sessionId} />
           )}
         />
         <Route
           path='/orders'
           render={() => (
-            <MyOrders />
+            <MyOrders user={user} userToken={userToken} />
           )}
         />
         <Route
           path='/cart'
           render={() => (
-            <CartSummary user={user} sessionId={sessionId}/>
+            <CartSummary user={user} sessionId={sessionId} />
           )}
         />
         <Route

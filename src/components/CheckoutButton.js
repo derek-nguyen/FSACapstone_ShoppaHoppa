@@ -5,6 +5,7 @@ import { createNewOrder, handleRemoveFromCart, fetchProductsCart } from "../axio
 const CheckoutButton = (props) => {
   const { user, product, setProducts, sessionId } = props;
   const history = useHistory();
+  console.log(user)
 
   const handleCheckout = async () => {
     try {
@@ -36,11 +37,8 @@ const CheckoutButton = (props) => {
       for (const item of product) {
         await handleRemoveFromCart(item.cartid, item.cartprodid);
       }
-
-      const updatedProducts = await fetchProductsCart(user.id, sessionId);
+      const updatedProducts = await fetchProductsCart(user.userid, sessionId);
       setProducts(updatedProducts);
-      console.log(updatedProducts);
-
       history.push("/confirmation");
     } catch (error) {
       console.error("Error creating orders:", error);

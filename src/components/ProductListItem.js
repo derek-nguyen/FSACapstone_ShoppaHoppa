@@ -5,7 +5,6 @@ import { checkUserCartExists, createNewCart, addProductToCart, removeProductFrom
 const ProductListItem = (props) => {
     const { product, user, sessionId, setProducts } = props;
 
-
     const handleDelete = async () => {
         try {
             const remove = await removeProductFromDB(product.prodid);
