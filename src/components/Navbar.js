@@ -27,7 +27,7 @@ const Navbar = (props) => {
     const handleLogout = () => {
         setUserToken(null);
         setUser(null);
-        history.push("/");
+        history.push("/home");
     };
 
     const menuOptions = [
@@ -71,15 +71,6 @@ const Navbar = (props) => {
         },
     ];
 
-  return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/home" className="nav-link">
-
-          <div className="navbar-logo">Chrono Realm</div>
-
-        </Link>
-
 
     return (
         <nav className="navbar">
@@ -87,7 +78,7 @@ const Navbar = (props) => {
                 <Link to="/home" className="nav-link">
                     <div className="navbar-logo">Chrono Realm</div>
                 </Link>
-
+    
                 <ul className="nav-menu">
                     {user?.role === "admin" && (
                         <li className="nav-item">
@@ -124,7 +115,6 @@ const Navbar = (props) => {
                             </Link>
                         )}
                     </li>
-
                 </ul>
             </div>
             <div className="navbar-menu-container">

@@ -94,6 +94,8 @@ COMPONENT: Navbar
 @media (max-width: 768px) {
   .side-menu-box {
     width: 45vw;
+  }
+}
 
 @media (max-width: 768px) {
   .side-menu-box {
@@ -898,11 +900,8 @@ textarea {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-
+}
 /*Landing Page */
-
- /*
-
 .video-container-wrapper {
   width: 100%;
   height: 60vh;
@@ -911,6 +910,23 @@ textarea {
   align-items: center;
   margin-top: -5%;
 }
+
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3s ease-in;
+  background-color: transparent;
+}
+
+.video-container.fade-in {
+  opacity: 1;
+
+}
+ /*
+
 
 .modal {
   background-color: #fff;
@@ -925,19 +941,7 @@ textarea {
   cursor: pointer;
   font-size: 24px;
 }
-.video-container {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 3s ease-in;
-  background-color: transparent;
-}
 
-.video-container.fade-in {
-  opacity: 1;
-
-
-} */
+ */
 
 
