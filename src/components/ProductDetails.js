@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { checkUserCartExists, createNewCart, addProductToCart } from "../axios-services/index"
-import { AdminEditProduct } from '../components'
+import { AdminEditProduct } from '../components';
+import Swal from 'sweetalert2';
 
 const ProductDetails = (props) => {
 
@@ -34,7 +35,13 @@ const ProductDetails = (props) => {
           const addedUserProduct = await addProductToCart(productData);
 
           if (addedUserProduct) {
-            alert('Product added!');
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Product added',
+              showConfirmButton: false,
+              timer: 1500
+            })
           }
         }
       } else if (user) {
@@ -57,7 +64,13 @@ const ProductDetails = (props) => {
           const addedUserProduct = await addProductToCart(productData);
 
           if (addedUserProduct) {
-            alert('Product added!');
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Product added',
+              showConfirmButton: false,
+              timer: 1500
+            })
           }
         }
       }
