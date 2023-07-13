@@ -9,7 +9,7 @@ const CheckoutButton = (props) => {
 
   const handleCheckout = async () => {
     try {
-      let userId = user ? user.id : 99; // Assign user ID or 99 if user is null
+      let userId = user ? user.id : 99;
       
       let orderItems;
       if (product.length === 1) {

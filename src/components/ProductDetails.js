@@ -91,15 +91,15 @@ const ProductDetails = (props) => {
           <img className="pdp-img" src={product.prodimg} alt={product.prodmodelnname} />
         </div>
         <div className="pdp-details-container">
-          <h3>{product.prodmodelname}</h3>
+          <h3 className="pdp-model-name-title">{product.prodmodelname}</h3>
           <hr></hr>
-          <p> {product.brand}</p>
+          <p className="pdp-brand-title"> {product.brand}</p>
           <p>${formatPriceWithCommas(product.prodprice)}</p>
           <button className="pdp-a2c-button" onClick={addToCartHandler}>Add To Cart</button>
           {user?.role === "admin" ? <AdminEditProduct product={product} user={user} setProduct={setProduct} /> : <></>}
         </div>
         <div className="pdp-description-container">
-          <h4>Description</h4>
+          <h4 className="pdp-descprition-title">Description</h4>
           <p>{product.proddescription}</p>
         </div>
       </div>

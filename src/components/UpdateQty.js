@@ -16,17 +16,26 @@ const UpdateQty = (props) => {
     const updatedTotalPrice = product.cartprodprice * updatedQuantity;
     try {
       await updatedProductCart(product.cartid, product.cartprodid, updatedQuantity, updatedTotalPrice);
-      const products = await fetchProductsCart(user?.id || null, sessionId);
-      setProducts(products);
+      setProducts(prevProducts => {
+        const updatedProducts = [...prevProducts];
+        const updatedProductIndex = updatedProducts.findIndex(p => p.cartprodid === product.cartprodid);
+        if (updatedProductIndex !== -1) {
+          updatedProducts[updatedProductIndex] = {
+            ...updatedProducts[updatedProductIndex],
+            cartquantity: updatedQuantity,
+            carttotalprice: updatedTotalPrice
+          };
+        }
+        return updatedProducts;
+      });
     } catch (error) {
       console.error(error);
     }
 
     if (updatedQuantity < 1) {
       await handleRemoveFromCart(product.cartid, product.cartprodid);
-      const products = await fetchProductsCart(user?.id || null, sessionId);
-      setProducts(products);
-    } 
+      setProducts(prevProducts => prevProducts.filter(p => p.cartprodid !== product.cartprodid));
+    }
   }
 
   return (

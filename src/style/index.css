@@ -33,7 +33,9 @@ COMPONENT: Navbar
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 5%;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 300;
+  font-size: 1.5vh;
 }
 
 .navbar-container {
@@ -47,10 +49,10 @@ COMPONENT: Navbar
 
 .navbar-logo {
   color: #333;
-  font-size: 24px;
+  font-size: 2.8vw; 
   font-weight: bold;
   text-decoration: none;
-  font-family: 'Lustria', serif;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .nav-menu {
@@ -72,10 +74,9 @@ COMPONENT: Navbar
   color: #007bff;
 }
 
-.nav-link-button:hover{
+.nav-link-button:hover {
   cursor: pointer;
 }
-
 
 .side-menu-box {
   width: 15vw;
@@ -83,50 +84,42 @@ COMPONENT: Navbar
   flex-direction: column;
   align-items: space-around;
   padding: 10px;
-  overflow: auto; 
+  overflow: auto;
 }
 
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
   }
-}
-
-@media (max-width: 768px) {
-  .side-menu-box {
-    width: 45vw;
+  
+  .navbar-logo {
+    font-size: 7vw; /* Responsive font size */
   }
 }
 
-@media (max-width: 768px) {
-  .side-menu-box {
-    width: 35vw;
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 1250) {
+@media (max-width: 1250px) {
   .side-menu-box {
     width: 15vw;
     flex-direction: row;
   }
 }
 
-@media (min-width: 3000) {
+@media (min-width: 3000px) {
   .side-menu-box {
     width: 5vw;
   }
 }
 
 .navbar-menu-container {
-  display: none; 
+  display: none;
 }
 
 @media (max-width: 768px) {
   .navbar-menu-container {
-    display: block; 
+    display: block;
   }
 }
+
 /* 
 COMPONENT: AccountForm
 */
@@ -218,13 +211,15 @@ COMPONENT: ProductListItem
   align-items: center;
   text-align: center;
   max-width: 250px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  background-color: transparent;
+  /* border: 1px solid #ccc; */
   margin: 10px;
   transition: transform 0.9s ease;
   cursor: pointer;
   border-radius: 8px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Abhaya Libre', serif;;
+  font-weight: 100;
+  font-size: 1.4vh;
 }
 
 
@@ -278,7 +273,7 @@ COMPONENT: ProductListItem
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Abhaya Libre', serif;
   font-size: 16px;
 }
 
@@ -353,15 +348,17 @@ COMPONENT: ProductListItem
 /* COMPONENT: Cart */
 
 .cart-container {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   padding: 20px;
   border-radius: 4px;
-  text-align: center; /* Center align the content within the container */
+  text-align: center;
+  margin-top: -5%;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .cart-table {
   display: inline-block;
-  text-align: center; /* Reset the text alignment for the table */
+  text-align: center; 
   margin-top: 20px;
   border-collapse: collapse;
   width: 100%;
@@ -371,15 +368,17 @@ COMPONENT: ProductListItem
   font-weight: bold;
   padding: 10px;
   border-bottom: 2px solid #ddd;
-  width: 300px; /* Set a fixed width for the table header cells */
+  width: 300px; 
 }
 
 .cart-table td {
   padding: 10px;
+  background-color: #f9f9f9;
+
 }
 
-.cart-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+.cart-table tbody tr:last-child {
+  border-bottom: 1px solid #ccc;
 }
 
 .empty-cart-message {
@@ -397,7 +396,7 @@ COMPONENT: ProductListItem
 
 .view-products-button,
 .checkout-button {
-  background-color: #333333;
+  background-color: black;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -407,6 +406,7 @@ COMPONENT: ProductListItem
   margin-right: 10px;
   transition: background-color 0.3s ease;
   width: 200px; 
+  font-family: 'Abhaya Libre', serif;
 }
 
 .view-products-button:hover,
@@ -428,6 +428,10 @@ COMPONENT: ProductListItem
 
 .cart-item-remove-button:hover {
   background-color: #222222;
+}
+
+.subtotal {
+  font-size: 1.5vh;
 }
 
 @media (max-width: 768px) {
@@ -474,11 +478,12 @@ COMPONENT: ProductListItem
 .quantity-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
 .quantity-button {
-  background-color: #f5f5f5;
+  background-color: transparent; 
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -498,12 +503,35 @@ COMPONENT: ProductListItem
 .pdp-display-container {
   display: table;
   margin: 0 auto;
-  background-color: #f0f0f0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   padding: 20px;
   width: 1000px;
   height: 600px;
   overflow: auto;
+  font-family: 'Abhaya Libre', serif;
+}
+
+@media (max-width: 1200px) {
+  .pdp-display-container {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .pdp-display-container {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
+}
+
+.pdp-model-name-title {
+  font-size: 2.2vh;
+}
+.pdp-brand-title {
+  font-size: 2vh;
 }
 
 .pdp-img {
@@ -524,27 +552,38 @@ COMPONENT: ProductListItem
 
 .pdp-a2c-button {
   width: 200px;
-  background-color: #3f51b5;
+  background-color: black;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.5vh;
 }
 
 .pdp-edit-product-button {
   width: 200px;
-  background-color: #707ed3;
+  background-color: black;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
   margin-top: 5px;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .pdp-description-container {
   display: table-row;
+}
+
+.pdp-descprition-title {
+  font-size: 2vh;
+}
+
+.pdp-description-container p {
+  font-size: 1.3vh;
 }
 
 .pdp-container {
@@ -558,6 +597,8 @@ COMPONENT: ProductListItem
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.5vh;
 }
 
 .product-carousel {
@@ -565,6 +606,7 @@ COMPONENT: ProductListItem
   max-width: 700px;
   margin: 0 auto;
   position: relative;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .carousel-content {
@@ -617,6 +659,7 @@ COMPONENT: ProductListItem
   background-color: #eee;
   border: none;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .carousel-control-btn.left-arrow {
