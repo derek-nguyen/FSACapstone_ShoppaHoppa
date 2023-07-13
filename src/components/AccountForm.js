@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom"
 import { registerUser, loginUser } from "../axios-services";
+import swal from 'sweetalert';
 
 const AccountForm = (props) => {
 
@@ -26,7 +27,8 @@ const AccountForm = (props) => {
                     localStorage.setItem('userToken', JSON.stringify(registeredUser.token));
                     setUser(registeredUser.user);
                     localStorage.setItem('user', JSON.stringify(registeredUser.user));
-                    alert(`Registration successful. Welcome ${registeredUser.user.username}`);
+                    swal(`Registration successful. Welcome ${registeredUser.user.username}`);
+                    // alert(`Registration successful. Welcome ${registeredUser.user.username}`);
                     history.push('/products');
                 }
             } catch (error) {
@@ -43,7 +45,8 @@ const AccountForm = (props) => {
                     localStorage.setItem('userToken', JSON.stringify(loggedInUser.token));
                     setUser(loggedInUser.user);
                     localStorage.setItem('user', JSON.stringify(loggedInUser.user));
-                    alert(`Welcome back ${loggedInUser.user.username}`);
+                    swal(`Welcome back ${loggedInUser.user.username}`);
+                    // alert(`Welcome back ${loggedInUser.user.username}`);
                     history.push('/products');
                 }
             } catch (error) {
