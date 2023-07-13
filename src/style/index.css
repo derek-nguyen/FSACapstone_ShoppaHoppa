@@ -94,6 +94,11 @@ COMPONENT: Navbar
 @media (max-width: 768px) {
   .side-menu-box {
     width: 45vw;
+=======
+
+@media (max-width: 768px) {
+  .side-menu-box {
+    width: 35vw;
     flex-direction: row;
   }
 }
@@ -120,8 +125,6 @@ COMPONENT: Navbar
     display: block; 
   }
 }
-
-
 /* 
 COMPONENT: AccountForm
 */
