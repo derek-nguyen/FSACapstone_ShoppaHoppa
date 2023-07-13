@@ -901,13 +901,15 @@ textarea {
 
 /*Landing Page */
 
+ /*
 
-/* .video-container-wrapper {
+.video-container-wrapper {
   width: 100%;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -5%;
 }
 
 .modal {
@@ -928,11 +930,14 @@ textarea {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 3s ease-in;
   background-color: transparent;
 }
 
 .video-container.fade-in {
   opacity: 1;
+
+
 } */
+
 
