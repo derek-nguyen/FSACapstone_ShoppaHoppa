@@ -3,6 +3,7 @@ import { checkUserCartExists, createNewCart, addProductToCart } from "../axios-s
 import { AdminEditProduct } from '../components'
 
 const ProductDetails = (props) => {
+
   const { product, user, sessionId, setProduct } = props;
   // console.log(product)
 
