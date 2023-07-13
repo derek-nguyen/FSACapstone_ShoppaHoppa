@@ -128,7 +128,7 @@ async function createInitialProducts() {
       {
         prodId: "prodId3",
         brand: "Audemars Piguet",
-        prodModelName: "Royal Oak Tourbillon Rose Gold",
+        prodModelName: "Royal Oak Tourbillon",
         prodDescription: "The Audemars Piguet Royal Oak Chronograph is a high-performance timepiece with a chronograph function and a distinctive octagonal case.",
         prodPrice: 132000.00,
         prodImg: "https://www.audemarspiguet.com/content/dam/ap/com/products/watches/MTR009710.00/importer/watch.png.transform.appdpmainmob.png"
@@ -192,7 +192,7 @@ async function createInitialProducts() {
       {
         prodId: 'prodId11',
         brand: 'A. Lange & Söhne',
-        prodModelName: 'A. Lange & Söhne Lange 1',
+        prodModelName: 'Lange 1',
         prodDescription: 'The A. Lange & Söhne Lange 1 is an iconic timepiece with asymmetric dial layout and patented big date display.',
         prodPrice: 33900.00,
         prodImg: 'https://img.alange-soehne.com/product-light-box-2/bcf8fe0b2b193dc12f285472418c057caf77979c.jpg'
@@ -200,7 +200,7 @@ async function createInitialProducts() {
       {
         prodId: 'prodId12',
         brand: 'A. Lange & Söhne',
-        prodModelName: 'A. Lange & Söhne Saxonia Thin',
+        prodModelName: 'Saxonia Thin',
         prodDescription: 'The A. Lange & Söhne Saxonia Thin is a classic dress watch with ultra-slim profile and timeless elegance.',
         prodPrice: 19900.00,
         prodImg: 'https://img.alange-soehne.com/product-light-box-2/75a1af1a01eefa19f5f08e6cecf7ec4847404957.jpg'
@@ -208,7 +208,7 @@ async function createInitialProducts() {
       {
         prodId: 'prodId13',
         brand: 'A. Lange & Söhne',
-        prodModelName: 'A. Lange & Söhne Richard Lange',
+        prodModelName: 'Richard Lange',
         prodDescription: 'The A. Lange & Söhne Richard Lange is dedicated to precision timekeeping with platinum case and refined aesthetics.',
         prodPrice: 53500.00,
         prodImg: 'https://img.alange-soehne.com/product-light-box-2/6a3ad53af4afced1f8fba3ede3faa381afef2179.jpg'
@@ -216,7 +216,7 @@ async function createInitialProducts() {
       {
         prodId: 'prodId14',
         brand: 'A. Lange & Söhne',
-        prodModelName: 'A. Lange & Söhne 1815 Chronograph',
+        prodModelName: '1815 Chronograph',
         prodDescription: 'The A. Lange & Söhne 1815 Chronograph is inspired by traditional pocket watches with rose gold case and exquisite craftsmanship.',
         prodPrice: 47000.00,
         prodImg: 'https://img.alange-soehne.com/product-light-box-2/149cf0966b5a87777bfb33e05b1693d85d10a5da.jpg'
@@ -224,7 +224,7 @@ async function createInitialProducts() {
       {
         prodId: 'prodId15',
         brand: 'A. Lange & Söhne',
-        prodModelName: 'A. Lange & Söhne Datograph Up/Down',
+        prodModelName: 'Datograph Up/Down',
         prodDescription: 'The A. Lange & Söhne Datograph Up/Down is a highly regarded chronograph with platinum case and the pinnacle of watchmaking expertise.',
         prodPrice: 94500.00,
         prodImg: 'https://img.alange-soehne.com/product-light-box-2/5abb63732cf5876aea7fc2634eb3cbd883579424.jpg'
@@ -272,7 +272,7 @@ async function createInitialProducts() {
       {
         prodId: "prodId21",
         brand: "Jaeger-LeCoultre",
-        prodModelName: "Master Ultra Thin Moon Rose Gold",
+        prodModelName: "Master Ultra Thin Moon",
         prodDescription: "The Jaeger-LeCoultre Master Ultra Thin Moon is a sophisticated and slim timepiece featuring a moon phase complication.",
         prodPrice: 23000.00,
         prodImg: "https://img.jaeger-lecoultre.com/product-light-box-1/2be9ce76e56723b5e6417ec385056b362d268507.jpg"
@@ -432,7 +432,7 @@ async function createInitialProducts() {
       {
         prodId: "prodId41",
         brand: "Rolex",
-        prodModelName: "Cosmograph Daytona Rose Gold",
+        prodModelName: "Cosmograph Daytona",
         prodDescription: "The Rolex Cosmograph Daytona is a highly reliable chronograph designed for racing drivers. It features a sleek design with a tachymetric scale on the bezel.",
         prodPrice: 59000.00,
         prodImg: "https://content.rolex.com/v7/dam/2023-06/upright-c/m126506-0001.png?impolicy=v7-main-configurator&imwidth=640"
