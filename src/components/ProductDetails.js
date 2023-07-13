@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { checkUserCartExists, createNewCart, addProductToCart } from "../axios-services/index"
+import { AdminEditProduct } from '../components'
 
 const ProductDetails = (props) => {
-  const { product, user, sessionId } = props;
-  console.log(product)
+
+  const { product, user, sessionId, setProduct } = props;
+  // console.log(product)
 
   if (!product) {
     return <div>Loading...</div>;
@@ -81,6 +83,7 @@ const ProductDetails = (props) => {
           <p> {product.brand}</p>
           <p>${formatPriceWithCommas(product.prodprice)}</p>
           <button className="pdp-a2c-button" onClick={addToCartHandler}>Add To Cart</button>
+          {user?.role === "admin" ? <AdminEditProduct product={product} user={user} setProduct={setProduct} /> : <></>}
         </div>
         <div className="pdp-description-container">
           <h4>Description</h4>

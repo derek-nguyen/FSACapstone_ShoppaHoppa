@@ -23,7 +23,7 @@ const ProductListPage = (props) => {
     return (
         <div className="plp-container">
             {products.map((product) => {
-                return <ProductListItem key={product.id} product={product} user={user} sessionId={sessionId} />
+                return <ProductListItem key={product.id} product={product} user={user} sessionId={sessionId} setProducts={setProducts} />
             })}
         </div>
     )

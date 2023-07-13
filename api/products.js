@@ -6,7 +6,8 @@ const {
     getProductById,
     checkUserRole,
     createProduct,
-    deleteProductById
+    deleteProductById,
+    updateProduct
 } = require('../db');
 
 
@@ -87,15 +88,26 @@ router.post("/create", async (req, res, next) => {
 // DELETE /api/products/:prodId
 router.delete("/remove/:prodId", async (req, res, next) => {
     try {
-      const { prodId } = req.params;
-  
-      await deleteProductById(prodId);
-      res.json({ message: "Product deleted successfully" });
+        const { prodId } = req.params;
+
+        await deleteProductById(prodId);
+        res.json({ message: "Product deleted successfully" });
     } catch (error) {
-      console.log(error);
-      next(error);
+        console.log(error);
+        next(error);
     }
-  });
+});
+
+router.patch("/update/:prodId", async (req, res, next) => {
+    try {
+        const { prodId } = req.params;
+        const productObj = req.body
+        const product = await updateProduct(prodId, productObj)
+        res.send(product)
+    } catch (error) {
+        next(error)
+    }
+})
 
 module.exports = router;
 

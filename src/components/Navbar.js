@@ -14,7 +14,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
+
 import { Logout, AdminDashboard } from '../components';
+
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const Navbar = (props) => {
@@ -68,6 +70,16 @@ const Navbar = (props) => {
             link: "/account/login",
         },
     ];
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/home" className="nav-link">
+
+          <div className="navbar-logo">Chrono Realm</div>
+
+        </Link>
+
 
     return (
         <nav className="navbar">
