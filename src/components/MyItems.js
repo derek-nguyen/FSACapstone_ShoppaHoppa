@@ -6,21 +6,21 @@
 //     // { token, orderId }
 //     const [myOrder, setMyOrder] = useState(true);
     
-//     // useEffect(() => {
-//     //     const getMyOrder = async () => {
-//     //         try {
-//     //             const order = await fetchOrderByOrderUser(orderId);
-//     //             console.log(orderId)
-//     //             setMyOrder(order);
-//     //         } catch (error) {
-//     //             console.error("Error fetching order:", error);
-//     //         }
-//     //     };
+//     useEffect(() => {
+//         const getMyOrder = async () => {
+//             try {
+//                 const order = await fetchOrderByOrderUser(orderId);
+//                 console.log(orderId)
+//                 setMyOrder(order);
+//             } catch (error) {
+//                 console.error("Error fetching order:", error);
+//             }
+//         };
         
-//     //     if (userToken && orderId) {
-//     //         getMyOrder();
-//     //     }
-//     // }, [userToken, orderId]);
+//         if (userToken && orderId) {
+//             getMyOrder();
+//         }
+//     }, [userToken, orderId]);
 
 //     return (
 //         <>
@@ -55,7 +55,7 @@
 //                                     <p className="align-top">$20.00</p>
 //                                 </td>
 //                             </tr>
-//                             {/* {myOrder ? (
+//                             {myOrder ? (
 //                                 <tr>
 //                                     <td>
 //                                         <img className="orders-img" src={myOrder.orderprodid} alt="Product Image" />
@@ -79,7 +79,7 @@
 //                                 <tr>
 //                                     <td colSpan="4">No order details available</td>
 //                                 </tr>
-//                             )} */}
+//                             )}
 //                         </tbody>
 //                     </table>
 //                 </div>

@@ -439,6 +439,17 @@ COMPONENT: Cart
   cursor: pointer;
 }
 
+.pdp-edit-product-button {
+  width: 200px;
+  background-color: #707ed3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
 .pdp-description-container {
   display: table-row;
 }
