@@ -3,12 +3,17 @@ import { Link } from "react-router-dom"
 import { checkUserCartExists, createNewCart, addProductToCart, removeProductFromDB, fetchAllProducts } from "../axios-services/index"
 
 const ProductListItem = (props) => {
-    const { product, user, sessionId } = props;
+    const { product, user, sessionId, setProducts } = props;
 
     const handleDelete = async () => {
         try {
-            await removeProductFromDB(product.prodid);
-            console.log("Product deleted successfully");
+            const remove = await removeProductFromDB(product.prodid);
+            if (remove) {
+                console.log("Product deleted successfully");
+                const productsData = await fetchAllProducts();
+                setProducts(productsData)
+            }
+
         } catch (error) {
             console.error("Error deleting product:", error);
         }
@@ -18,61 +23,6 @@ const ProductListItem = (props) => {
         const formattedPrice = parseFloat(price).toFixed(2);
         return formattedPrice.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
-
-    // const addToCartHandler = async () => {
-    //     try {
-    //         if (!user) {
-    //           const _userCartExists = await checkUserCartExists(null, sessionId);
-
-    //           if (!_userCartExists) {
-    //             const createdGuestCart = await createNewCart(null, sessionId);
-    //             console.log(createdGuestCart);
-    //           } else {
-    //             const productData = {
-    //               prodId: product.prodid,
-    //               prodModelName: product.prodmodelname,
-    //               prodDescription: product.proddescription,
-    //               prodImg: product.prodimg,
-    //               quantity: 1,
-    //               prodPrice: product.prodprice,
-    //               totalPrice: product.prodprice * 1,
-    //               cartId: _userCartExists.cartid
-    //             };
-
-    //             const addedUserProduct = await addProductToCart(productData);
-
-    //             if (addedUserProduct) {
-    //               alert('Product added!');
-    //             }
-    //           }
-    //         } else if (user) {
-    //           const _userCartExists = await checkUserCartExists(user.id, sessionId);
-
-    //           if (!_userCartExists) {
-    //             await createNewCart(user.id || null, sessionId);
-    //           } else {
-    //             const productData = {
-    //               prodId: product.prodid,
-    //               prodModelName: product.prodmodelname,
-    //               prodDescription: product.proddescription,
-    //               prodImg: product.prodimg,
-    //               quantity: 1,
-    //               prodPrice: product.prodprice,
-    //               totalPrice: product.prodprice * 1,
-    //               cartId: _userCartExists.cartid
-    //             };
-
-    //             const addedUserProduct = await addProductToCart(productData);
-
-    //             if (addedUserProduct) {
-    //               alert('Product added!');
-    //             }
-    //           }
-    //         }
-    //       } catch (error) {
-    //         console.error(error);
-    //       }
-    // }
 
     return (
         <div className="plp-item">

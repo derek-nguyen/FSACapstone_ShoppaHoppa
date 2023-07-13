@@ -6,7 +6,11 @@ import { useHistory } from "react-router-dom";
 const CartSummary = (props) => {
   const { user, sessionId } = props;
   const [products, setProducts] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
   const history = useHistory();
+
+  console.log(user)
+
 
   useEffect(() => {
     async function fetchCartData() {
@@ -24,6 +28,23 @@ const CartSummary = (props) => {
 
     return () => clearTimeout(timer);
   }, [user, sessionId]);
+
+  useEffect(() => {
+    const calculateSubtotal = () => {
+      let total = 0;
+      products.forEach((product) => {
+        total += product.cartprodprice * product.cartquantity;
+      });
+      setSubtotal(total);
+    };
+
+    calculateSubtotal();
+  }, [products]);
+
+  const formatPriceWithCommas = (price) => {
+    const formattedPrice = parseFloat(price).toFixed(2);
+    return formattedPrice.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
   const handleViewProducts = () => {
     history.push("/products");
@@ -59,6 +80,9 @@ const CartSummary = (props) => {
           </table>
         ) : (
           <p className="empty-cart-message">Your cart is empty.</p>
+        )}
+        {products.length > 0 && (
+          <p className="subtotal">Subtotal: ${formatPriceWithCommas(subtotal)}</p>
         )}
       </div>
       <div className="cart-action-buttons">
