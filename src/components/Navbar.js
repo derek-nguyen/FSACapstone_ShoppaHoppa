@@ -75,11 +75,12 @@ const Navbar = (props) => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <Link to="/home" className="nav-link">
-                    <div className="navbar-logo">Chrono Realm</div>
-                </Link>
-    
-                <ul className="nav-menu">
+                <ul className="nav-item-right">
+                    <Link to="/home" className="navbar-left-link">
+                        <div className="navbar-logo">Chrono Realm</div>
+                    </Link>
+                </ul>
+                <ul className="nav-item-right">
                     {user?.role === "admin" && (
                         <li className="nav-item">
                             <Link to="/admin/dashboard" className="nav-link">
@@ -87,7 +88,7 @@ const Navbar = (props) => {
                             </Link>
                         </li>
                     )}
-                    <li className="nav-item">
+                    <li className="nav-item-right">
                         <Link to="/products" className="nav-link">
                             All Products
                         </Link>
@@ -99,12 +100,12 @@ const Navbar = (props) => {
                             </Link>
                         </li>
                     )} */}
-                    <li className="nav-item">
+                    <li className="nav-item-right">
                         <Link to="/cart" className="nav-link">
                             Cart
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item-right">
                         {userToken ? (
                             <a onClick={handleLogout} className="nav-link nav-link-button">
                                 Logout
