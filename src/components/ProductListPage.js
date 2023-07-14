@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ProductListItem } from "../components";
 import { fetchAllProducts } from "../axios-services";
+import SearchIcon from '@mui/icons-material/Search';
 
 const ProductListPage = (props) => {
   const { user, sessionId } = props;
@@ -9,6 +10,7 @@ const ProductListPage = (props) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,36 +52,42 @@ const ProductListPage = (props) => {
     setSearchTerm(event.target.value);
   };
 
-    return (
-        <>
-          <div className={`search-container ${isLoaded ? "fade-in" : ""}`}>
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search brands and models"
-              value={searchTerm}
-              onChange={handleSearchChange}
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  return (
+    <>
+      <div className={`search-container ${isLoaded ? "fade-in" : ""}`}>
+        <SearchIcon className="search-icon" onClick={toggleSearch} />
+        {isSearchOpen && (
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search brands and models"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        )}
+      </div>
+
+      <div className={`plp-container ${isLoaded ? "fade-in" : ""}`}>
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <ProductListItem
+              key={product.id}
+              product={product}
+              user={user}
+              sessionId={sessionId}
+              setProducts={setProducts}
             />
-          </div>
-    
-          <div className={`plp-container ${isLoaded ? "fade-in" : ""}`}>
-            {/* Product list rendering */}
-            {filteredProducts.length > 0 ? (
-              filteredProducts.map((product) => (
-                <ProductListItem
-                  key={product.id}
-                  product={product}
-                  user={user}
-                  sessionId={sessionId}
-                  setProducts={setProducts}
-                />
-              ))
-            ) : (
-              <p>No products found.</p>
-            )}
-          </div>
-        </>
-      );
-    };
+          ))
+        ) : (
+          <p>No products found.</p>
+        )}
+      </div>
+    </>
+  );
+};
 
 export default ProductListPage;

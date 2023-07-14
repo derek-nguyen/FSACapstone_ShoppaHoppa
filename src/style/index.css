@@ -222,16 +222,21 @@ COMPONENT: ProductListPage
 
 .search-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items:center;
   width:15vw;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.75s ease-in;
 }
-.search-container.fade-in{
+.search-container.fade-in {
   opacity: 1;
 }
 
+.search-icon {
+  cursor: pointer;
+  margin-right: 8px;
+}
 
 @media (max-width: 768px) {
   .plp-container {
