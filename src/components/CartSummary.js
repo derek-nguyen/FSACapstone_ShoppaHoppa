@@ -52,9 +52,10 @@ const CartSummary = (props) => {
   };
 
   return (
-    <>
+
+    <>       
+     <h3 className="cart-title" > Your Cart</h3>
       <div className="cart-container">
-        <h3>Your Cart</h3>
         {products.length > 0 ? (
           <table className="cart-table">
             <thead>
@@ -79,13 +80,16 @@ const CartSummary = (props) => {
               ))}
             </tbody>
           </table>
-        ) : (
+        
+        ) : ( 
           <p className="empty-cart-message">Your cart is empty.</p>
-        )}
-        {products.length > 0 && (
+        )}</div>
+        {products.length > 0 && ( <div>
           <p className="subtotal">Subtotal: ${formatPriceWithCommas(subtotal)}</p>
+        
+        </div>
         )}
-      </div>
+      
       <div className="cart-action-buttons">
         <button className="view-products-button" onClick={handleViewProducts}>
           {products.length > 0 ? "Continue Shopping" : "Shop All Products"}

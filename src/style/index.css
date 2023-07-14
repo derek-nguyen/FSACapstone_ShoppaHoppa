@@ -100,6 +100,17 @@ COMPONENT: Navbar
   overflow: auto;
 }
 
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .navbar-logo {
+    font-size: 5vw; /* Responsive font size */
+  }
+}
+
+
 @media (max-width: 1250px) {
   .side-menu-box {
     width: 15vw;
@@ -122,7 +133,6 @@ COMPONENT: Navbar
     display: block;
   }
 }
-
 
 /* 
 COMPONENT: AccountForm
@@ -368,11 +378,18 @@ COMPONENT: ProductListItem
 
 /* COMPONENT: Cart */
 
+.cart-title{
+  text-align:center;
+  margin-bottom:5%;
+  border-radius: 4px;
+  font-family: 'Abhaya Libre', serif;
+}
 .cart-container {
   /* background-color: #f5f5f5; */
   padding: 20px;
   border-radius: 4px;
   text-align: center;
+  display:flex;
   margin-top: -5%;
   font-family: 'Abhaya Libre', serif;
 }
@@ -441,9 +458,176 @@ COMPONENT: ProductListItem
 
 
 
-.subtotal {
-  font-size: 1.5vh;
+
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 5%;
+  border-radius: 4px;
+  font-family: 'Abhaya Libre', serif;
 }
+
+.cart-container {
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Abhaya Libre', serif;
+  width: 100vw;
+  max-width: 2000px; /* Add max-width to limit the container width */
+}
+
+.cart-table {
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.cart-table-header th {
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  width: 300px;
+}
+
+.cart-table td {
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.cart-table tbody tr:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.empty-cart-message {
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cart-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.view-products-button,
+.checkout-button {
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  font-family: 'Abhaya Libre', serif;
+}
+
+.view-products-button:hover,
+.checkout-button:hover {
+  background-color: #222222;
+}
+
+.cart-item-remove-icon {
+  cursor: pointer;
+}
+
+.subtotal {
+  font-size: 1.5em;
+  text-align: center;
+  padding:20px;
+}
+.cart-title {
+  text-align: center;
+  margin-bottom: 5%;
+  border-radius: 4px;
+  font-family: 'Abhaya Libre', serif;
+  font-size:2em;
+}
+
+.cart-container {
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Abhaya Libre', serif;
+  width: 100vw;
+  max-width: 2000px; /* Add max-width to limit the container width */
+}
+
+.cart-table {
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.cart-table-header th {
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  width: 300px;
+}
+
+.cart-table td {
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.cart-table tbody tr:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.empty-cart-message {
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cart-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.view-products-button,
+.checkout-button {
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  font-family: 'Abhaya Libre', serif;
+}
+
+.view-products-button:hover,
+.checkout-button:hover {
+  background-color: #222222;
+}
+
+.cart-item-remove-icon {
+  cursor: pointer;
+}
+
 
 @media (max-width: 768px) {
   .cart-container {
@@ -483,6 +667,17 @@ COMPONENT: ProductListItem
     margin-bottom: 10px;
   }
 }
+
+@media (min-width: 2000px) {
+  .cart-container {
+    width: 100vw;
+    margin-right:auto;
+    margin-left:auto;
+    
+ 
+  }
+}
+
 
 /* UpdateQty */
 
