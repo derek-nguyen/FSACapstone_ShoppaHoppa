@@ -2,6 +2,8 @@ import { React } from "react";
 import { Link } from "react-router-dom"
 import { checkUserCartExists, createNewCart, addProductToCart, removeProductFromDB, fetchAllProducts } from "../axios-services/index";
 import Swal from 'sweetalert2';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
 
 const ProductListItem = (props) => {
   const { product, user, sessionId, setProducts } = props;
@@ -50,21 +52,18 @@ const ProductListItem = (props) => {
     const formattedPrice = parseFloat(price).toFixed(2);
     return formattedPrice.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-
-  return (
-    <div className="plp-item">
-      <Link to={`/products/${product.prodid}`}>
-        <img src={product.prodimg} alt="" />
-      </Link>
-      <h3>{product.prodmodelname}</h3>
-      <p>${formatPriceWithCommas(product.prodprice)}</p>
-      {user && user.role === "admin" && (
-        <button className="delete-button" onClick={handleDelete}>
-          Delete
-        </button>
-      )}
-    </div>
-  )
+    return (
+        <div className="plp-item">
+            <Link to={`/products/${product.prodid}`}>
+                <img src={product.prodimg} alt="" />
+            </Link>
+            <h3>{product.prodmodelname}</h3>
+            <p>${formatPriceWithCommas(product.prodprice)}</p>
+            {user && user.role === "admin" && (
+                <DeleteForeverIcon className="delete-button" onClick={handleDelete} />
+            )}
+        </div>
+    )
 }
 
 export default ProductListItem;

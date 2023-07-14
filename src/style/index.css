@@ -424,21 +424,11 @@ COMPONENT: ProductListItem
   background-color: #222222;
 }
 
-.cart-item-remove-button {
-  background-color: #333333;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px; 
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.cart-item-remove-icon{
+  cursor:pointer;
 }
 
-.cart-item-remove-button:hover {
-  background-color: #222222;
-}
+
 
 .subtotal {
   font-size: 1.5vh;
