@@ -134,12 +134,6 @@ COMPONENT: Navbar
   }
 }
 
-
-<<<<<<<<< Temporary merge branch 1
-=========
-  
-
->>>>>>>>> Temporary merge branch 2
 /* 
 COMPONENT: AccountForm
 */
@@ -567,6 +561,7 @@ COMPONENT: ProductListItem
 .subtotal {
   font-size: 1.5em;
   text-align: center;
+  font-family: 'Abhaya Libre', serif;
   padding:20px;
 }
 .cart-title {
@@ -921,33 +916,53 @@ COMPONENT: ProductListItem
 .confirmation-message-container {
   text-align: center;
   font-family: 'Abhaya Libre', serif;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .confirmed-message {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
-
-.thank-you-message {
-  font-size: 18px;
-}
-
-.confirmed-order-details-container {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.confirmed-order-details-container h2 {
+.thank-you-message,
+.confirmation-email-message {
   font-size: 20px;
-  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.no-order-details-message {
-  font-size: 16px;
-  color: #888;
-  text-align: center;
-  margin-top: 20px;
+.confirmation-message-container p {
+  margin: 10px 0;
 }
+
+.confirmation-message-container p:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.confirmation-message-container p:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.confirmation-message-container p:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.confirmation-message-container.show p {
+  opacity: 1;
+}
+
 
 /* Footer */
 
@@ -1401,9 +1416,19 @@ textarea {
   height: auto;
 }
 
+.img-left-link {
+  display: inline-block;
+  position: relative;
+}
+
 .img-left-link img {
   width: 500px;
   height: auto;
+  transition: transform 0.7s ease-in-out;
+}
+
+.img-left-link:hover img {
+  transform: translateY(-10px);
 }
 
 /* Alerts */ 
