@@ -220,6 +220,18 @@ COMPONENT: ProductListPage
 }
 
 
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  width:15vw;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.75s ease-in;
+}
+.search-container.fade-in{
+  opacity: 1;
+}
+
 
 @media (max-width: 768px) {
   .plp-container {
