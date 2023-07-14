@@ -96,7 +96,7 @@ const AdminEditProduct = (props) => {
                                         <input
                                             type="text"
                                             name="prodId"
-                                            value={productData.prodId}
+                                            value={`${product.prodid} - Not Editable`}
                                             onChange={handleInputChange}
                                             placeholder="Non-editable Product ID"
                                             disabled
