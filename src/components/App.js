@@ -16,7 +16,9 @@ import {
   ConfirmationPage,
   Home,
   Footer,
-  AdminDashboard
+  AdminDashboard,
+  ShippingInfoPage,
+  Payment
 } from '../components'
 
 const App = () => {
@@ -57,7 +59,7 @@ const App = () => {
           )}
         />
         <Route
-          exact path={['/','/home']}
+          exact path={['/', '/home']}
           render={() => (
             <Home />
           )}
@@ -96,6 +98,18 @@ const App = () => {
           path='/admin/dashboard'
           render={() => (
             <AdminDashboard user={user} />
+          )}
+        />
+        <Route
+          path='/checkout/shipping'
+          render={() => (
+            <ShippingInfoPage />
+          )}
+        />
+        <Route
+          path='/checkout/payment'
+          render={() => (
+            <Payment />
           )}
         />
       </Switch>
