@@ -125,57 +125,67 @@ COMPONENT: AccountForm
 */
 
 .account-form {
+  font-family: 'Abhaya Libre', serif;
   max-width: 400px;
   margin: 0 auto;
-  padding: 2rem;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
 }
 
-.form-title {
+.account-form h1 {
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .form-label {
-  display: flex;
-  margin-bottom: 0.5rem;
-  align-items: center;
-  align-self: flex-start;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .form-input {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 10px;
+  font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .form-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #000000;
+  color: #ffffff;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
+  padding: 10px 30px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .form-button:hover {
-  background-color: #0056b3;
+  background-color: #333333;
 }
 
 .form-link {
-  display: block;
-  margin-top: 1rem;
-  text-align: center;
   color: #007bff;
   text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+  padding-top: 10px;
 }
+
+
 
 /* 
 COMPONENT: ProductListPage
@@ -686,6 +696,7 @@ COMPONENT: ProductListItem
 
 .confirmation-message-container {
   text-align: center;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .confirmed-message {
@@ -790,6 +801,8 @@ COMPONENT: ProductListItem
 .larger-container {
   display: flex;
   justify-content: center;
+  font-family: 'Abhaya Libre', serif;
+
 }
 
 .create-prod-container {
@@ -824,16 +837,19 @@ COMPONENT: ProductListItem
 
 .form-group {
   margin-bottom: 10px;
+
 }
 
 .form-group label {
   margin-bottom: 5px;
   font-weight: normal;
+  
 }
 
 input[type="text"],
 input[type="number"],
 textarea {
+  font-family: 'Abhaya Libre', serif;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -855,6 +871,8 @@ textarea {
 }
 
 .btn-create {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.5vh;
   display: block;
   margin: 0 auto;
   margin-top: 10px;
@@ -881,6 +899,7 @@ textarea {
   width: 80%;
   max-width: 600px;
   margin-bottom: 20px;
+  font-family: 'Abhaya Libre', serif;
 }
 
 .preview-title {
@@ -947,6 +966,7 @@ textarea {
   background-color: rgba(0, 0, 0, 0.5);
 }
 /*Landing Page */
+
 .video-container-wrapper {
   width: 100%;
   height: 60vh;
@@ -954,8 +974,8 @@ textarea {
   justify-content: center;
   align-items: center;
   margin-top: -5%;
+  margin-bottom: 20px;
 }
-
 
 .video-container {
   width: 100%;
@@ -968,9 +988,176 @@ textarea {
 
 .video-container.fade-in {
   opacity: 1;
-
 }
- /*
+
+.lp-container-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  font-family: 'Abhaya Libre', serif;
+  background-image: url("https://i.imgur.com/r28RIVU.jpg");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: right center; 
+  padding: 100px;
+  animation: levitate 2s ease-in-out forwards;
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.lp-container-1 h2 {
+  font-size: 3.5vh;
+  margin-right: 20px;
+}
+
+.lp-container-1 p {
+  font-size: 1.5vh;
+  margin-right: 20px;
+}
+
+.lp-container-1 .lp-column-right {
+  flex-basis: 50%;
+  order: 2;
+}
+
+.lp-container-1 .lp-column-left {
+  flex-basis: 40%;
+  order: 1;
+  margin-right: 20px;
+}
+
+.lp-container-1 .lp-column-left p {
+  margin: 0;
+}
+
+.lp-container-1 .lp-column-right h2,
+.lp-container-1 .lp-column-right p {
+  margin-bottom: 10px;
+}
+
+.block-background {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 175%;
+}
+
+.inner-text {
+  font-size: 3vh;
+}
+
+.lp-container-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 100px; /* Add padding at the bottom */
+  font-family: 'Abhaya Libre', serif;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: scroll-effect 1s ease-in-out forwards;
+}
+
+@keyframes scroll-effect {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lp-container-2 h2 {
+  font-size: 3.5vh;
+  margin-left: 20px;
+}
+
+.lp-container-2 p {
+  font-size: 1.7vh;
+  margin-left: 20px;
+}
+
+.lp-column-left {
+  flex-basis: 50%;
+}
+
+.lp-column-right {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lp-column-right img {
+  max-width: 150%;
+  height: auto;
+}
+
+.img-left-link img {
+  width: 500px;
+  height: auto;
+}
+
+/* Alerts */ 
+
+.alert-font {
+  font-family: 'Abhaya Libre', serif;
+} 
+
+.alert-button {
+  font-family: 'Abhaya Libre', serif;
+  background-color: black;
+}
+
+.swal-custom-font {
+  font-family: 'Abhaya Libre', serif;
+}
+
+.swal-custom-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.swal-custom-button:hover {
+  background-color: #0056b3;
+}
+
+.page-error-display {
+  font-family: 'Abhaya Libre', serif;
+  position: absolute;
+  top: -65%; /* Adjust the top value to provide desired spacing below the navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
+
+/*
 
 
 .modal {

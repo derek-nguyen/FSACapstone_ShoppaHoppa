@@ -21,6 +21,7 @@ const AccountForm = (props) => {
             try {
                 const registeredUser = await registerUser(email, password);
                 if (registeredUser) {
+                    // Registration successful
                     setEmail('');
                     setPassword('');
                     setUserToken(registeredUser.token);
@@ -30,15 +31,26 @@ const AccountForm = (props) => {
                     Swal.fire({
                         position: 'top-middle',
                         icon: 'success',
-                        title: ` Registration successful. Welcome ${registeredUser.user.username}`,
+                        title: `Registration successful. Welcome ${registeredUser.user.username}`,
                         showConfirmButton: false,
-                        timer: 1500
-                      })
-                    history.push('/products');
+                        timer: 1500,
+                        customClass: {
+                            title: 'alert-font'
+                        }
+                    });
+                    history.push('/home');
                 }
             } catch (error) {
                 console.error(error);
-                alert(error)
+                Swal.fire({
+                    position: 'top-middle',
+                    icon: 'error',
+                    title: 'Registration failed',
+                    text: 'An error occurred during registration.',
+                    customClass: {
+                        title: 'alert-font'
+                    }
+                });
             }
         } else if (actionType === "login") {
             try {
@@ -53,14 +65,26 @@ const AccountForm = (props) => {
                     Swal.fire({
                         position: 'top-middle',
                         icon: 'success',
-                        title: ` Welcome back ${loggedInUser.user.username}`,
+                        title: `Welcome back ${loggedInUser.user.username}`,
                         showConfirmButton: false,
-                        timer: 1500
-                      })
-                    history.push('/products');
+                        timer: 1500,
+                        customClass: {
+                            title: 'alert-font'
+                        }
+                    });
+                    history.push('/home');
                 }
             } catch (error) {
                 console.error(error);
+                Swal.fire({
+                    position: 'top-middle',
+                    icon: 'error',
+                    title: 'Login failed',
+                    text: 'An error occurred during login.',
+                    customClass: {
+                        title: 'alert-font'
+                    }
+                });
             }
         }
     }
@@ -69,10 +93,10 @@ const AccountForm = (props) => {
 
         <form className="account-form" onSubmit={handleSubmit}>
             <h1>{actionType === "login" ? "Login" : "Register Your Account"}</h1>
-            <br></br>
+            <br />
             <label htmlFor="email" className="form-label">Email</label>
             <input type="text" name="email" className="form-input" required value={email} onChange={(event) => setEmail(event.target.value)}></input>
-            <label htmlFor="password" className="form-label" >Password</label>
+            <label htmlFor="password" className="form-label">Password</label>
             <input type="password" name="password" className="form-input" required value={password} onChange={(event) => setPassword(event.target.value)}></input>
             <button type="submit" className="form-button">Submit</button>
             <div>
@@ -82,6 +106,7 @@ const AccountForm = (props) => {
                 }
             </div>
         </form>
+
     )
 }
 
