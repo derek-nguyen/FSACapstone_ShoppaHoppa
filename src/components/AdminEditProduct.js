@@ -98,7 +98,8 @@ const AdminEditProduct = (props) => {
                                             name="prodId"
                                             value={productData.prodId}
                                             onChange={handleInputChange}
-                                            placeholder="Product ID"
+                                            placeholder="Non-editable Product ID"
+                                            disabled
                                         />
                                     </div>
                                     <div className="grid-item">

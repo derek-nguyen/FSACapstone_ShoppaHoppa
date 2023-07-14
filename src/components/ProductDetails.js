@@ -79,6 +79,17 @@ const ProductDetails = (props) => {
     }
   }
 
+  // const handleProductUpdate = () => {
+  //   // Call the necessary function to update the product details
+  //   fetchProductDetails(product.prodid) // Replace `fetchProductDetails` with your actual function
+  //     .then((updatedProduct) => {
+  //       setProduct(updatedProduct);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error updating product:", error);
+  //     });
+  // };
+
   const formatPriceWithCommas = (price) => {
     const formattedPrice = parseFloat(price).toFixed(2);
     return formattedPrice.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
