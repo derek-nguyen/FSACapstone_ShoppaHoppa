@@ -57,7 +57,7 @@ const App = () => {
           )}
         />
         <Route
-          path={['/','/home']}
+          exact path={['/','/home']}
           render={() => (
             <Home />
           )}
