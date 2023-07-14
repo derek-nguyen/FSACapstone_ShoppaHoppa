@@ -4,25 +4,32 @@ import { fetchProdId } from '../axios-services'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
+
 const ProductDisplayPage = (props) => {
-    const { user, sessionId } = props;
-    const { prodId } = useParams()
-    const [product, setProduct] = useState(null);
+  const { user, sessionId } = props;
+  const { prodId } = useParams();
+  const [product, setProduct] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-    useEffect(() => {
-        const getPdp = async () => {
-            const results = await fetchProdId(prodId);
-            setProduct(results);
-        }
-        getPdp();
-    }, []);
+  useEffect(() => {
+    const getPdp = async () => {
+      const results = await fetchProdId(prodId);
+      setProduct(results);
+      setIsLoaded(true);
+    };
+    getPdp();
+  }, [prodId]);
 
-    return (
-        <div className="pdp-container">
-            <ProductDetails product={product} user={user} sessionId={sessionId} setProduct={setProduct} />
-            <ProductCarousel product={product} />
-        </div>
-    )
-}
+  return (
+    <div className={`pdp-container ${isLoaded ? "fade-in" : ""}`}>
+      {isLoaded && (
+        <>
+          <ProductDetails product={product} user={user} sessionId={sessionId} setProduct={setProduct} />
+          <ProductCarousel product={product} />
+        </>
+      )}
+    </div>
+  );
+};
 
 export default ProductDisplayPage;
