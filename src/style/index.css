@@ -36,42 +36,55 @@ COMPONENT: Navbar
   font-family: 'Abhaya Libre', serif;
   font-weight: 300;
   font-size: 1.5vh;
+  padding: 0 20px;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
+  width: 100%; 
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.navbar-logo {
-  color: #333;
-  font-size: 2.8vw; 
-  font-weight: bold;
-  text-decoration: none;
-  font-family: 'Abhaya Libre', serif;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
+  padding: 0; 
+}
+
+.navbar-left {
+  padding-right: 20px; 
+}
+
+.navbar-left-link {
+  text-decoration: none;
 }
 
 .nav-item {
+  list-style: none;
+}
+
+.navbar-logo {
+  color: #333;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Abhaya Libre', serif;
+}
+
+.nav-item-right {
+  display: flex; 
   margin-right: 20px;
+  padding-left: 20px;
 }
 
 .nav-link {
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #007bff;
+  list-style: none;
 }
 
 .nav-link-button:hover {
@@ -82,7 +95,7 @@ COMPONENT: Navbar
   width: 15vw;
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: flex-start; 
   padding: 10px;
   overflow: auto;
 }
@@ -96,6 +109,7 @@ COMPONENT: Navbar
     font-size: 5vw; /* Responsive font size */
   }
 }
+
 
 @media (max-width: 1250px) {
   .side-menu-box {
@@ -119,9 +133,6 @@ COMPONENT: Navbar
     display: block;
   }
 }
-
-
-  
 
 /* 
 COMPONENT: AccountForm
