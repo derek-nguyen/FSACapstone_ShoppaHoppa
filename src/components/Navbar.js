@@ -46,11 +46,11 @@ const Navbar = (props) => {
             icon: <InfoIcon />,
             link: "/products",
         },
-        userToken && {
-            text: "My Orders",
-            icon: <PersonIcon />,
-            link: "/orders",
-        },
+        // userToken && {
+        //     text: "My Orders",
+        //     icon: <PersonIcon />,
+        //     link: "/orders",
+        // },
         {
             text: "Cart",
             icon: <ShoppingCartRoundedIcon />,
@@ -92,13 +92,13 @@ const Navbar = (props) => {
                             All Products
                         </Link>
                     </li>
-                    {userToken && (
+                    {/* {userToken && (
                         <li className="nav-item">
                             <Link to="/orders" className="nav-link">
                                 My Orders
                             </Link>
                         </li>
-                    )}
+                    )} */}
                     <li className="nav-item">
                         <Link to="/cart" className="nav-link">
                             Cart

@@ -150,44 +150,44 @@ async function createInitialProducts() {
         prodImg: "https://www.audemarspiguet.com/content/dam/ap/com/products/watches/MTR010565AA/importer/watch.png.transform.appdpmainmob.png"
       },
       {
-        prodId: "prodId6",
-        brand: "Breguet",
-        prodModelName: "Classique Rose Gold ",
-        prodDescription: "The Breguet Classique collection represents the epitome of traditional watchmaking with its elegant designs and exquisite craftsmanship.",
-        prodPrice: 42100.00,
-        prodImg: "https://www.breguet.com/sites/default/files/styles/page_modele_preview/public/gardetemps/variante/soldat/7727br_12_9wu_face_0.jpg?itok=OTdZ-PpJ"
+        prodId: "prodId36",
+        brand: "Vacheron Constantin",
+        prodModelName: "Traditionnelle",
+        prodDescription: "The Vacheron Constantin Traditionnelle is a highly coveted and iconic watch known for its traditional craftsmanship.",
+        prodPrice: 45000.00,
+        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/16/23/89/3/1623893.png.transform.vacproddetails.png"
       },
       {
-        prodId: "prodId7",
-        brand: "Breguet",
-        prodModelName: "Marine",
-        prodDescription: "The Breguet Marine collection combines nautical inspiration with technical innovation, offering sporty yet sophisticated timepieces.",
-        prodPrice: 11000.00,
-        prodImg: "https://www.breguet.com/sites/default/files/styles/page_modele_preview/public/gardetemps/variante/soldat/5517BB_Y2_BZ0.jpg?itok=BQy88dCq"
+        prodId: "prodId37",
+        brand: "Vacheron Constantin",
+        prodModelName: "Overseas",
+        prodDescription: "The Vacheron Constantin Overseas is a sporty and contemporary watch that combines elegance with rugged durability.",
+        prodPrice: 21500.00,
+        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/10/87/63/3/1087633.png.transform.vacproddetailstab.png"
       },
       {
-        prodId: "prodId8",
-        brand: "Breguet",
-        prodModelName: "Tradition",
-        prodDescription: "The Breguet Tradition collection pays homage to the brand's rich heritage, showcasing timepieces with exposed movements and iconic design elements.",
-        prodPrice: 19000.00,
-        prodImg: "https://www.breguet.com/sites/default/files/styles/page_modele_preview/public/gardetemps/variante/soldat/7047pt119zu_soldat_face_maps.jpg?itok=jedttFf9"
+        prodId: "prodId38",
+        brand: "Vacheron Constantin",
+        prodModelName: "Patrimony",
+        prodDescription: "The Vacheron Constantin Patrimony is a timeless and elegant dress watch, admired for its classic and refined design.",
+        prodPrice: 30000.00,
+        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/16/19/63/0/1619630.png.transform.vacproddetails.png"
       },
       {
-        prodId: "prodId9",
-        brand: "Breguet",
-        prodModelName: "Reine de Naples",
-        prodDescription: "The Breguet Reine de Naples collection is a tribute to the original watch created for Queen Marie Antoinette, featuring elegant and feminine designs.",
-        prodPrice: 26000.00,
-        prodImg: "https://www.breguet.com/sites/default/files/styles/page_modele_preview/public/gardetemps/variante/soldat/8928BR_5W_944DD0D_face.jpg?itok=qTqNjCnF"
+        prodId: "prodId39",
+        brand: "Vacheron Constantin",
+        prodModelName: "Harmony",
+        prodDescription: "The Vacheron Constantin Harmony is a collection of watches known for their harmonious blend of aesthetics and precision.",
+        prodPrice: 20000.00,
+        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/67/93/71/679371.png.transform.vacproddetailstab.png"
       },
       {
-        prodId: "prodId10",
-        brand: "Breguet",
-        prodModelName: "Type XX / Type XXI",
-        prodDescription: "The Breguet Type XX and Type XXI are aviation-inspired chronographs with a vintage charm and modern functionalities.",
-        prodPrice: 13000.00,
-        prodImg: "https://www.breguet.com/sites/default/files/styles/page_modele_preview/public/gardetemps/variante/soldat/2057ST923WU.jpg?itok=aDxuEdsy"
+        prodId: "prodId40",
+        brand: "Vacheron Constantin",
+        prodModelName: "Traditionnelle for Women",
+        prodDescription: "The Vacheron Constantin Traditionnelle for Women is an exquisite watch collection with a perfect blend of femininity and sophistication.",
+        prodPrice: 18500.00,
+        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/22/60/52/1/2260521.png.transform.vacproddetailstab.png"
       },
       {
         prodId: 'prodId11',
@@ -390,44 +390,44 @@ async function createInitialProducts() {
         prodImg: "https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-de-ville-prestige-42410402002002-l.png"
       },
       {
-        prodId: "prodId36",
-        brand: "Vacheron Constantin",
-        prodModelName: "Traditionnelle",
-        prodDescription: "The Vacheron Constantin Traditionnelle is a highly coveted and iconic watch known for its traditional craftsmanship.",
-        prodPrice: 45000.00,
-        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/16/23/89/3/1623893.png.transform.vacproddetails.png"
+        prodId: "prodId6",
+        brand: "Orient",
+        prodModelName: "Bambino",
+        prodDescription: "The Orient Bambino is a classic dress watch with a sleek and timeless design. It features an automatic movement and a stainless steel case.",
+        prodPrice: 200.00,
+        prodImg: "https://cdn.shopify.com/s/files/1/0026/4978/4385/products/RA-AC0M03S10B_A.png?v=1654809285"
       },
       {
-        prodId: "prodId37",
-        brand: "Vacheron Constantin",
-        prodModelName: "Overseas",
-        prodDescription: "The Vacheron Constantin Overseas is a sporty and contemporary watch that combines elegance with rugged durability.",
-        prodPrice: 21500.00,
-        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/10/87/63/3/1087633.png.transform.vacproddetailstab.png"
+        prodId: "prodId7",
+        brand: "Orient",
+        prodModelName: "Marine",
+        prodDescription: "The Orient Marine collection combines nautical inspiration with technical innovation, offering sporty yet sophisticated timepieces.",
+        prodPrice: 385.00,
+        prodImg: "https://cdn.shopify.com/s/files/1/0026/4978/4385/products/RA-AA0001B19A_A_1600x1067_crop_center.png.webp?v=1676401223"
       },
       {
-        prodId: "prodId38",
-        brand: "Vacheron Constantin",
-        prodModelName: "Patrimony",
-        prodDescription: "The Vacheron Constantin Patrimony is a timeless and elegant dress watch, admired for its classic and refined design.",
-        prodPrice: 30000.00,
-        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/16/19/63/0/1619630.png.transform.vacproddetails.png"
+        prodId: "prodId8",
+        brand: "Orient",
+        prodModelName: "Mako III",
+        prodDescription: "The Orient Mako III is a popular dive watch known for its reliability and affordability. It features a robust construction and water resistance.",
+        prodPrice: 300.00,
+        prodImg: "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/RA-AA0821S19B_1600x1067_crop_center.png.webp?v=1686934690"
       },
       {
-        prodId: "prodId39",
-        brand: "Vacheron Constantin",
-        prodModelName: "Harmony",
-        prodDescription: "The Vacheron Constantin Harmony is a collection of watches known for their harmonious blend of aesthetics and precision.",
-        prodPrice: 20000.00,
-        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/67/93/71/679371.png.transform.vacproddetailstab.png"
+        prodId: "prodId9",
+        brand: "Orient",
+        prodModelName: "Sun and Moon",
+        prodDescription: "The Orient Sun and Moon is an elegant and versatile timepiece with a unique day and night indicator. It showcases exquisite craftsmanship.",
+        prodPrice: 450.00,
+        prodImg: "https://cdn.shopify.com/s/files/1/0026/4978/4385/products/RA-AK0009T00B_B_1600x1067_crop_center.png.webp?v=1667857033"
       },
       {
-        prodId: "prodId40",
-        brand: "Vacheron Constantin",
-        prodModelName: "Traditionnelle for Women",
-        prodDescription: "The Vacheron Constantin Traditionnelle for Women is an exquisite watch collection with a perfect blend of femininity and sophistication.",
-        prodPrice: 18500.00,
-        prodImg: "https://www.vacheron-constantin.com/dam/rcq/vac/22/60/52/1/2260521.png.transform.vacproddetailstab.png"
+        prodId: "prodId10",
+        brand: "Orient",
+        prodModelName: "Full Skeleton",
+        prodDescription: "The Orient Full Skeleton features an open-heart dial that reveals the intricate automatic movement. It offers a captivating and stylish design.",
+        prodPrice: 900.00,
+        prodImg: "https://cdn.shopify.com/s/files/1/0026/4978/4385/products/RE-AZ0005S00B_A_1600x1067_crop_center.png.webp?v=1664296278"
       },
       {
         prodId: "prodId41",
@@ -648,7 +648,7 @@ const createInitialOrderItems = async () => {
       orderProdModelName: "Master Ultra Thin Moon Rose Gold",
       orderProdImg: "https://images.watchfinder.co.uk/imgv3/stock/232796/Jaeger-LeCoultre-Master%20Ultra%20Thin%20Moon-1362520-232796-230130-124228.jpg;quality=90;h=640,%20https://images.watchfinder.co.uk/imgv3/stock/232796/Jaeger-LeCoultre-Master%20Ultra%20Thin%20Moon-1362520-232796-230130-124228.jpg;quality=55;h=1280%202x",
       orderQty: 1,
-      orderId:1,
+      orderId: 1,
       userId: 1,
       orderProdPrice: 6700.00
     },
@@ -657,8 +657,8 @@ const createInitialOrderItems = async () => {
       orderProdModelName: "Rolex",
       orderProdImg: "https://content.rolex.com/v7/dam/2023-06/upright-c/m336935-0004.png?impolicy=v7-main-configurator&imwidth=640",
       orderQty: 1,
-      orderId:1,
-      userId:1,
+      orderId: 1,
+      userId: 1,
       orderProdPrice: 42450.00
     },
 
@@ -668,7 +668,7 @@ const createInitialOrderItems = async () => {
       orderProdImg: "https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-constellation-globemaster-13033412206001-l.png",
       orderQty: 2,
       orderId: 2,
-      userId:2,
+      userId: 2,
       orderProdPrice: 23000.00
     }
   ];

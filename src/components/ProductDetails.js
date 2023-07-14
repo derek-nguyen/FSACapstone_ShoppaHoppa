@@ -4,13 +4,7 @@ import { AdminEditProduct } from '../components';
 import Swal from 'sweetalert2';
 
 const ProductDetails = (props) => {
-
   const { product, user, sessionId, setProduct } = props;
-  // console.log(product)
-
-  if (!product) {
-    return <div>Loading...</div>;
-  }
 
   const addToCartHandler = async () => {
     try {
@@ -40,7 +34,10 @@ const ProductDetails = (props) => {
               icon: 'success',
               title: 'Product added',
               showConfirmButton: false,
-              timer: 1500
+              timer: 1500,
+              customClass: {
+                title: 'alert-font'
+              }
             })
           }
         }
@@ -69,7 +66,10 @@ const ProductDetails = (props) => {
               icon: 'success',
               title: 'Product added',
               showConfirmButton: false,
-              timer: 1500
+              timer: 1500,
+              customClass: {
+                title: 'alert-font'
+              }
             })
           }
         }
@@ -83,6 +83,14 @@ const ProductDetails = (props) => {
     const formattedPrice = parseFloat(price).toFixed(2);
     return formattedPrice.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+
+  if (!product) {
+    return (
+      <div className="page-error-display">
+        It appears this page does not exist in our system. Please head back to the all products page for a better experience.
+      </div>
+    );
+  }
 
   return (
     <>
