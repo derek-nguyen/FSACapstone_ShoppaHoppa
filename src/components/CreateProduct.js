@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { createProduct, fetchProdIdToCreate } from "../axios-services";
+import Swal from 'sweetalert2';
+
 
 const CreateProduct = () => {
     const [productData, setProductData] = useState({
@@ -25,12 +27,17 @@ const CreateProduct = () => {
     const checkExistingProduct = async (prodId) => {
         try {
             const product = await fetchProdIdToCreate(prodId);
-            return product || null;
+            if (product && product.prodId === prodId) {
+                return product;
+            } else {
+                return null;
+            }
         } catch (error) {
             console.error("Error checking existing product:", error);
             throw error;
         }
     };
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -44,6 +51,18 @@ const CreateProduct = () => {
 
             const createdProduct = await createProduct(productData);
             console.log("Product created:", createdProduct);
+            if (createdProduct) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Product Created',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    customClass: {
+                        title: 'alert-font'
+                    }
+                })
+            }
             setProductData({
                 prodId: "",
                 brand: "",
@@ -75,6 +94,7 @@ const CreateProduct = () => {
                                     value={productData.prodId}
                                     onChange={handleInputChange}
                                     placeholder="Product ID"
+                                    minLength={6}
                                     required
                                 />
                             </div>
