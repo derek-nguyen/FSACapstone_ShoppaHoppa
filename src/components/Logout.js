@@ -1,28 +1,71 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { ProductListItem } from "../components";
+import { fetchAllProducts } from "../axios-services";
 
-const Logout = (props) => {
-  const { setUserToken, setUser } = props;
+const ProductListPage = (props) => {
+  const { user, sessionId } = props;
 
-  const history = useHistory();
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const handleLogout = async (event) => {
-    event.preventDefault();
-    setUserToken('');
-    localStorage.removeItem('userToken');
-    setUser(null);
-    localStorage.removeItem('user');
-    localStorage.removeItem('sessionId')
-    history.push('/account/login');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const productsData = await fetchAllProducts();
+        setProducts(productsData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const filterProducts = () => {
+      if (searchTerm === "") {
+        setFilteredProducts(products);
+      } else {
+        const filtered = products.filter((product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredProducts(filtered);
+      }
+    };
+
+    filterProducts();
+  }, [products, searchTerm]);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   return (
-    <div className="navbar-container">
-      <button className="logout-button" onClick={handleLogout}>
-        Log Out
-      </button>
+    <div className="plp-container">
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+      </div>
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product) => (
+          <ProductListItem
+            key={product.id}
+            product={product}
+            user={user}
+            sessionId={sessionId}
+            setProducts={setProducts}
+          />
+        ))
+      ) : (
+        <p>No products found.</p>
+      )}
     </div>
   );
 };
 
-export default Logout;
+export default ProductListPage;
