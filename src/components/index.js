@@ -21,3 +21,6 @@ export { default as AdminDashboard } from './AdminDashboard';
 export { default as AdminEditProduct } from './AdminEditProduct'
 export { default as CreateProduct } from './CreateProduct';
 export { default as HomePage1} from './HomePage1';
+export { default as ShippingInfoPage } from './ShippingInfoPage';
+export { default as ShippingButton } from './ShippingButton';
+export { default as Payment } from './Payment'

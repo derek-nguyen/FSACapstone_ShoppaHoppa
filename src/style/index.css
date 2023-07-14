@@ -43,7 +43,7 @@ COMPONENT: Navbar
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; 
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -51,11 +51,11 @@ COMPONENT: Navbar
 .nav-menu {
   display: flex;
   list-style: none;
-  padding: 0; 
+  padding: 0;
 }
 
 .navbar-left {
-  padding-right: 20px; 
+  padding-right: 20px;
 }
 
 .navbar-left-link {
@@ -75,7 +75,7 @@ COMPONENT: Navbar
 }
 
 .nav-item-right {
-  display: flex; 
+  display: flex;
   margin-right: 20px;
   padding-left: 20px;
 }
@@ -95,7 +95,7 @@ COMPONENT: Navbar
   width: 15vw;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   padding: 10px;
   overflow: auto;
 }
@@ -104,9 +104,10 @@ COMPONENT: Navbar
   .nav-menu {
     display: none;
   }
-  
+
   .navbar-logo {
-    font-size: 5vw; /* Responsive font size */
+    font-size: 5vw;
+    /* Responsive font size */
   }
 }
 
@@ -223,12 +224,14 @@ COMPONENT: ProductListPage
 .search-container {
   display: flex;
   justify-content: flex-start;
-  align-items:center;
-  width:15vw;
+  align-items: center;
+  width: 25%;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.75s ease-in;
+  margin-top: -5%;
 }
+
 .search-container.fade-in {
   opacity: 1;
 }
@@ -237,6 +240,7 @@ COMPONENT: ProductListPage
   cursor: pointer;
   margin-right: 8px;
 }
+
 
 @media (max-width: 768px) {
   .plp-container {
@@ -265,7 +269,8 @@ COMPONENT: ProductListItem
   transition: transform 0.9s ease;
   cursor: pointer;
   border-radius: 8px;
-  font-family: 'Abhaya Libre', serif;;
+  font-family: 'Abhaya Libre', serif;
+  ;
   font-weight: 100;
   font-size: 1.4vh;
 }
@@ -395,25 +400,26 @@ COMPONENT: ProductListItem
 
 /* COMPONENT: Cart */
 
-.cart-title{
-  text-align:center;
-  margin-bottom:5%;
+.cart-title {
+  text-align: center;
+  margin-bottom: 5%;
   border-radius: 4px;
   font-family: 'Abhaya Libre', serif;
 }
+
 .cart-container {
   /* background-color: #f5f5f5; */
   padding: 20px;
   border-radius: 4px;
   text-align: center;
-  display:flex;
+  display: flex;
   margin-top: -5%;
   font-family: 'Abhaya Libre', serif;
 }
 
 .cart-table {
   display: inline-block;
-  text-align: center; 
+  text-align: center;
   margin-top: 20px;
   border-collapse: collapse;
   width: 100%;
@@ -423,7 +429,7 @@ COMPONENT: ProductListItem
   font-weight: bold;
   padding: 10px;
   border-bottom: 2px solid #ddd;
-  width: 300px; 
+  width: 300px;
 }
 
 .cart-table td {
@@ -460,7 +466,7 @@ COMPONENT: ProductListItem
   cursor: pointer;
   margin-right: 10px;
   transition: background-color 0.3s ease;
-  width: 200px; 
+  width: 200px;
   font-family: 'Abhaya Libre', serif;
 }
 
@@ -469,13 +475,250 @@ COMPONENT: ProductListItem
   background-color: #222222;
 }
 
-.cart-item-remove-icon{
-  cursor:pointer;
+.cart-item-remove-icon {
+  cursor: pointer;
+}
+
+.shipping-button {
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  font-family: 'Abhaya Libre', serif;
 }
 
 
 
+/* Shipping Page */
 
+.billing-button {
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  font-family: 'Abhaya Libre', serif;
+}
+
+.shipping-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Abhaya Libre', serif;
+  margin-top: -50px;
+}
+
+.shipping-info-form {
+  flex: 1;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-right: 20px;
+}
+
+.shipping-info-title {
+  margin-top: 0;
+}
+
+.name-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.location-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.shipping-form-group {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.zip-form-input,
+.phone-form-input {
+  flex: 1;
+}
+
+.shipping-form-group label {
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.email-form-input,
+.checkbox-input,
+.country-input,
+.add1-form-input,
+.add2-form-input,
+.city-form-input,
+.phoneNumber-form-input,
+.firstNam-form-input,
+.lastName-form-input,
+.state-input,
+.zip-form-input,
+.phone-form-input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+  box-sizing: border-box; 
+}
+
+.email-form-input:focus,
+.checkbox-input:focus,
+.country-input:focus,
+.state-input:focus,
+.zip-form-input:focus,
+.phone-form-input:focus,
+.firstNam-form-input:focus,
+.lastName-form-input:focus,
+.add1-form-input:focus,
+.add2-form-input:focus,
+.city-form-input:focus,
+.phoneNumber-form-input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Additional CSS for responsive layout */
+@media screen and (min-width: 600px) {
+  .name-grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .shipping-grid-item {
+    align-items: flex-start;
+  }
+
+  .shipping-grid-item:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .shipping-grid-item:nth-child(2) {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .location-grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+.shipping-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.shipping-checkbox-input {
+  margin-right: 10px;
+}
+
+.shipping-option label {
+  display: flex;
+  align-items: center;
+}
+
+.shipping-option span {
+  margin-left: 5px;
+}
+
+/* Payment container */ 
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Abhaya Libre', serif;
+  padding-top: 20px;
+}
+
+.payment-form {
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.payment-form-group {
+  margin-bottom: 15px;
+}
+
+.payment-form-group label {
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.payment-form-group input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.payment-form-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.last-checkout-button {
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  font-family: 'Abhaya Libre', serif;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+
+/* cart */
 
 .cart-title {
   text-align: center;
@@ -494,7 +737,8 @@ COMPONENT: ProductListItem
   flex-direction: column;
   font-family: 'Abhaya Libre', serif;
   width: 100vw;
-  max-width: 2000px; /* Add max-width to limit the container width */
+  max-width: 2000px;
+  /* Add max-width to limit the container width */
 }
 
 .cart-table {
@@ -549,6 +793,9 @@ COMPONENT: ProductListItem
   font-family: 'Abhaya Libre', serif;
 }
 
+
+
+
 .view-products-button:hover,
 .checkout-button:hover {
   background-color: #222222;
@@ -562,14 +809,15 @@ COMPONENT: ProductListItem
   font-size: 1.5em;
   text-align: center;
   font-family: 'Abhaya Libre', serif;
-  padding:20px;
+  padding: 20px;
 }
+
 .cart-title {
   text-align: center;
   margin-bottom: 5%;
   border-radius: 4px;
   font-family: 'Abhaya Libre', serif;
-  font-size:2em;
+  font-size: 2em;
 }
 
 .cart-container {
@@ -582,7 +830,8 @@ COMPONENT: ProductListItem
   flex-direction: column;
   font-family: 'Abhaya Libre', serif;
   width: 100vw;
-  max-width: 2000px; /* Add max-width to limit the container width */
+  max-width: 2000px;
+  /* Add max-width to limit the container width */
 }
 
 .cart-table {
@@ -689,10 +938,10 @@ COMPONENT: ProductListItem
 @media (min-width: 2000px) {
   .cart-container {
     width: 100vw;
-    margin-right:auto;
-    margin-left:auto;
-    
- 
+    margin-right: auto;
+    margin-left: auto;
+
+
   }
 }
 
@@ -707,7 +956,7 @@ COMPONENT: ProductListItem
 }
 
 .quantity-button {
-  background-color: transparent; 
+  background-color: transparent;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -754,6 +1003,7 @@ COMPONENT: ProductListItem
 .pdp-model-name-title {
   font-size: 2.2vh;
 }
+
 .pdp-brand-title {
   font-size: 2vh;
 }
@@ -794,8 +1044,9 @@ COMPONENT: ProductListItem
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 5px;
   font-family: 'Abhaya Libre', serif;
+  font-size: 1.5vh;
+  margin-top: 5px;
 }
 
 .pdp-description-container {
@@ -924,6 +1175,7 @@ COMPONENT: ProductListItem
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -936,6 +1188,7 @@ COMPONENT: ProductListItem
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
+
 .thank-you-message,
 .confirmation-email-message {
   font-size: 20px;
@@ -1031,7 +1284,7 @@ COMPONENT: ProductListItem
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   height: 60px;
 }
 
@@ -1082,7 +1335,7 @@ COMPONENT: ProductListItem
 .form-group label {
   margin-bottom: 5px;
   font-weight: normal;
-  
+
 }
 
 input[type="text"],
@@ -1242,7 +1495,7 @@ textarea {
 .modal .close {
   position: relative;
   top: -20px;
-  left:-10px;
+  left: -10px;
   cursor: pointer;
   font-size: 50px;
   color: black;
@@ -1310,7 +1563,7 @@ textarea {
   background-image: url("https://i.imgur.com/r28RIVU.jpg");
   background-repeat: no-repeat;
   background-size: 75%;
-  background-position: right center; 
+  background-position: right center;
   padding: 100px;
   animation: levitate 2s ease-in-out forwards;
 }
@@ -1320,6 +1573,7 @@ textarea {
     transform: translateY(100px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -1373,7 +1627,8 @@ textarea {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
-  padding-bottom: 100px; /* Add padding at the bottom */
+  padding-bottom: 100px;
+  /* Add padding at the bottom */
   font-family: 'Abhaya Libre', serif;
   opacity: 0;
   transform: translateY(50px);
@@ -1385,6 +1640,7 @@ textarea {
     opacity: 0;
     transform: translateY(50px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1431,11 +1687,11 @@ textarea {
   transform: translateY(-10px);
 }
 
-/* Alerts */ 
+/* Alerts */
 
 .alert-font {
   font-family: 'Abhaya Libre', serif;
-} 
+}
 
 .alert-button {
   font-family: 'Abhaya Libre', serif;
@@ -1464,7 +1720,8 @@ textarea {
 .page-error-display {
   font-family: 'Abhaya Libre', serif;
   position: absolute;
-  top: -65%; /* Adjust the top value to provide desired spacing below the navbar */
+  top: -65%;
+  /* Adjust the top value to provide desired spacing below the navbar */
   left: 0;
   right: 0;
   bottom: 0;
@@ -1496,5 +1753,3 @@ textarea {
 }
 
  */
-
-
