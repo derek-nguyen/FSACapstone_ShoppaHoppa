@@ -10,12 +10,8 @@ const ConfirmationPage = ({ user, sessionId }) => {
     }
   }, [user, sessionId, history]);
 
-  // if (!user || !sessionId) {
-  //   return null;
-  // }
-
   return (
-    <div className="confirmation-message-container">
+    <div className={`confirmation-message-container show`}>
       <p className="confirmed-message">Your order is confirmed.</p>
       <p className="thank-you-message">Thank you for shopping with us!</p>
       <p className="confirmation-email-message">Your confirmation email will be sent shortly.</p>
