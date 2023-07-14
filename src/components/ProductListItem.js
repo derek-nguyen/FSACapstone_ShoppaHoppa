@@ -2,6 +2,8 @@ import { React } from "react";
 import { Link } from "react-router-dom"
 import { checkUserCartExists, createNewCart, addProductToCart, removeProductFromDB, fetchAllProducts } from "../axios-services/index";
 import Swal from 'sweetalert2';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
 
 const ProductListItem = (props) => {
     const { product, user, sessionId, setProducts } = props;
@@ -45,9 +47,7 @@ const ProductListItem = (props) => {
             <h3>{product.prodmodelname}</h3>
             <p>${formatPriceWithCommas(product.prodprice)}</p>
             {user && user.role === "admin" && (
-                <button className="delete-button" onClick={handleDelete}>
-                    Delete
-                </button>
+                <DeleteForeverIcon className="delete-button" onClick={handleDelete} />
             )}
         </div>
     )
