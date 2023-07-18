@@ -479,21 +479,6 @@ COMPONENT: ProductListItem
   cursor: pointer;
 }
 
-.shipping-button {
-  background-color: black;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: background-color 0.3s ease;
-  width: 200px;
-  font-family: 'Abhaya Libre', serif;
-}
-
-
 
 /* Shipping Page */
 
@@ -509,6 +494,7 @@ COMPONENT: ProductListItem
   transition: background-color 0.3s ease;
   width: 200px;
   font-family: 'Abhaya Libre', serif;
+  margin-bottom:100px;
 }
 
 .shipping-info-container {
@@ -710,7 +696,6 @@ COMPONENT: ProductListItem
   transition: background-color 0.3s ease;
   width: 200px;
   font-family: 'Abhaya Libre', serif;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -777,24 +762,6 @@ COMPONENT: ProductListItem
   align-items: center;
   margin-top: 20px;
 }
-
-.view-products-button,
-.checkout-button {
-  background-color: black;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: background-color 0.3s ease;
-  width: 200px;
-  font-family: 'Abhaya Libre', serif;
-}
-
-
-
 
 .view-products-button:hover,
 .checkout-button:hover {

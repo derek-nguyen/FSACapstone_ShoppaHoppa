@@ -191,24 +191,23 @@ const updateOrderStatus = async (orderId, newStatus) => {
 };
 
 const getOrdersByUser = async (userId) => {
-    try {
-      const { rows } = await client.query(
-        `
-        SELECT o.*
-        FROM orders AS o
-        WHERE o.userId = $1;
-        `,
-        [userId]
-      );
-  
-      return rows;
-    } catch (error) {
-      console.log('Error retrieving orders by user:', error);
-      throw error;
-    }
-  };
+  try {
+    const { rows } = await client.query(
+      `
+      SELECT o.*, oi.orderProdImg, orderProdModelName, orderQty
+      FROM orders AS o
+      JOIN order_items AS oi ON o.orderId = oi.orderId
+      WHERE o.userId = $1;
+      `,
+      [userId]
+    );
 
-
+    return rows;
+  } catch (error) {
+    console.log('Error retrieving orders by user:', error);
+    throw error;
+  }
+};
 
 
 

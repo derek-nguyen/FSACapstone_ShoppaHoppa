@@ -6,9 +6,8 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const ProductDisplayPage = (props) => {
-  const { user, sessionId } = props;
+  const { user, sessionId, product, setProduct } = props;
   const { prodId } = useParams();
-  const [product, setProduct] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {

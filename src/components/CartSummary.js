@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CartItem, CheckoutButton, ProductCarousel, ShippingButton } from "../components";
+import { CartItem, CheckoutButton, ProductCarousel } from "../components";
 import { fetchProductsCart } from "../axios-services";
 import { useHistory } from "react-router-dom";
 
@@ -51,6 +51,7 @@ const CartSummary = (props) => {
     history.push("/products");
   };
 
+
   return (
 
     <>       
@@ -95,10 +96,13 @@ const CartSummary = (props) => {
           {products.length > 0 ? "Continue Shopping" : "Shop All Products"}
         </button>
         {products.length > 0 && (
-          // <div>
-          //   <CheckoutButton product={products} setProducts={setProducts} user={user} sessionId={sessionId} />
-          // </div>
-          <ShippingButton subtotal={subtotal}/>
+
+          <div>
+            <CheckoutButton product={products} setProducts={setProducts} user={user} sessionId={sessionId} />
+         
+
+      
+             </div>
         )}
       </div>
       <div>
