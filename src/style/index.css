@@ -376,6 +376,7 @@ COMPONENT: ProductListItem
 
 .order-info {
   margin-bottom: 10px;
+  
 }
 
 .order-info p {
@@ -390,11 +391,23 @@ COMPONENT: ProductListItem
 .order-column {
   background-color: #f2f2f2;
   padding: 10px;
-  width: 25%;
+  /* width: 25%; */
 }
-
+.order-product-table{
+  
+}
 .order-column th {
   padding: 10px;
+}
+
+.orders-img{
+  margin-left:20%;
+}
+.orderHeadline {
+  text-align: center;
+  border-radius: 4px;
+  font-size:1.5em;
+  font-family: 'Abhaya Libre', serif;
 }
 
 
