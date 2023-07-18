@@ -41,14 +41,14 @@ const CheckoutButton = (props) => {
       }
       const updatedProducts = await fetchProductsCart(userId, sessionId);
       setProducts(updatedProducts);
-      history.push("/confirmation");
+      history.push("/checkout/shipping");
     } catch (error) {
       console.error("Error creating orders:", error);
     }
   };
 
   return (
-    <button className="checkout-button" onClick={handleCheckout}>
+    <button className="last-checkout-button" onClick={handleCheckout}>
       Checkout
     </button>
   );

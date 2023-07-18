@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import { uid } from 'uid';
 
-
 /* 
 IMPORT REACT COMPONENTS BELOW
 */
@@ -18,11 +17,11 @@ import {
   Footer,
   AdminDashboard,
   ShippingInfoPage,
-  Payment
+  Payment,
+  MyItems
 } from '../components'
 
 const App = () => {
-
   const [userToken, setUserToken] = useState(() => {
     return localStorage.getItem('userToken')
   });
@@ -38,13 +37,18 @@ const App = () => {
     // return storedUser ? JSON.parse(storedUser) : null
   });
 
+  const [product, setProduct] = useState(null); 
+
+
   useEffect(() => {
     let sessionId = localStorage.getItem('sessionId');
     if (!sessionId) {
       sessionId = uid(10);
       localStorage.setItem('sessionId', sessionId)
     }
-  })
+  });
+
+  
 
   const sessionId = localStorage.getItem('sessionId');
 
@@ -73,15 +77,15 @@ const App = () => {
         <Route
           exact path='/products/:prodId'
           render={() => (
-            <ProductDisplayPage user={user} sessionId={sessionId} />
+            <ProductDisplayPage user={user} sessionId={sessionId} product={product} setProduct={setProduct}/>
           )}
         />
-        {/* <Route
+        <Route
           path='/orders'
           render={() => (
-            <MyOrders user={user} userToken={userToken} />
+            <MyItems user={user} userToken={userToken} />
           )}
-        /> */}
+        />
         <Route
           path='/cart'
           render={() => (
@@ -109,7 +113,7 @@ const App = () => {
         <Route
           path='/checkout/payment'
           render={() => (
-            <Payment />
+            <Payment/>
           )}
         />
       </Switch>

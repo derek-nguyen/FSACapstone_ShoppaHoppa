@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { CheckoutButton } from '../components';
+import { CheckoutButton } from '../components';
 
-const Payment = () => {
+const Payment = (props) => {
+    const {user,product, setProducts, sessionId} = props;
     const [cardNumber, setCardNumber] = useState('');
     const [cardHolder, setCardHolder] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
@@ -69,7 +70,8 @@ const Payment = () => {
                     />
                 </div>
                 {/* <CheckoutButton /> */}
-                <button className='last-checkout-button'>Submit</button>
+                <CheckoutButton user={user} product={product} setProducts={setProducts} sessionId={sessionId}  />
+                {/* <button className='last-checkout-button'>Submit</button> */}
 
             </form>
         </div>

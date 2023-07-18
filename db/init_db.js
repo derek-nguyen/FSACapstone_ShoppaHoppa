@@ -77,7 +77,7 @@ async function createTables() {
       CREATE TABLE orders (
         orderId SERIAL PRIMARY KEY,
         orderDate TIMESTAMP NOT NULL,
-        orderStatus VARCHAR(255) DEFAULT 'created' NOT NULL,
+        orderStatus VARCHAR(255) DEFAULT 'Created' NOT NULL,
         userId INT NOT NULL,
         orderTotalPrice Decimal(10, 2) NOT NULL DEFAULT 0.00
       );
@@ -619,13 +619,13 @@ const createInitialOrders = async () => {
       orderId: 1,
       userId: 1,
       orderDate: '2023-07-06 20:20:18',
-      orderStatus: "pending"
+      orderStatus: "Pending"
     },
     {
       orderId: 2,
       userId: 2,
       orderDate: '2023-07-06 20:20:18',
-      orderStatus: "created"
+      orderStatus: "Created"
     }
   ];
 
@@ -682,7 +682,8 @@ const createInitialOrderItems = async () => {
     console.error("Error creating initial order items!");
     throw error;
   }
-};
+}
+
 
 const createInitialCart = async () => {
   console.log("Starting to create carts...");
