@@ -355,6 +355,8 @@ COMPONENT: ProductListItem
   padding: 8px;
   width: 100%;
   table-layout: fixed;
+  font-family: 'Abhaya Libre', serif;
+
 }
 
 .order-table table {
