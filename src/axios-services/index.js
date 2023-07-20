@@ -1,4 +1,4 @@
-const BASE_URL = process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production' ? 'http://chronorealm.onrender.com' : "http://localhost:4000";
+const BASE_URL = process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production' ? 'https://chronorealm.onrender.com' : "http://localhost:4000";
 
 import axios from 'axios';
 
