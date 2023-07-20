@@ -81,12 +81,12 @@ const App = () => {
             <ProductDisplayPage user={user} sessionId={sessionId} product={product} setProduct={setProduct}/>
           )}
         />
-        <Route
+        {/* <Route
           path='/orders'
           render={() => (
             <MyItems user={user} userToken={userToken} />
           )}
-        />
+        /> */}
         <Route
           path='/cart'
           render={() => (
