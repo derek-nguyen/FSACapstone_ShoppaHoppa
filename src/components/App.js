@@ -19,7 +19,7 @@ import {
   AdminDashboard,
   ShippingInfoPage,
   Payment,
-  MyItems
+  // MyItems
 } from '../components'
 
 const App = () => {
